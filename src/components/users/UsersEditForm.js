@@ -2,28 +2,26 @@ import React from 'react';
 
 // import BackButton from '../utility/BackButton';
 
-function BandsNewForm({ handleSubmit, handleChange, band }) {
-// function CreateBandForm() {
+// function UsersEditForm({ handleSubmit, handleChange, artist }) {
+function UsersEditForm() {
   return (
     <div>
-      <h1>Create Band</h1>
-      <div className="row">
+      <h1>Edit Profile</h1>
+      {/* <div className="row">
         <div className="page-banner col-md-12">
-
         </div>
         <form onSubmit={handleSubmit} className="col-md-6">
           <div className="form-group">
-            <label htmlFor="Band">Band</label>
+            <label htmlFor="artist">Artist</label>
             <input
               type="text"
               className="form-control"
-              id="username"
-              name="username"
-              value={band.username}
+              id="artist"
+              name="artist"
+              value={artist.artist}
               onChange={handleChange}
             />
           </div>
-
           <div className="form-group">
             <label htmlFor="image">Image</label>
             <input
@@ -31,7 +29,19 @@ function BandsNewForm({ handleSubmit, handleChange, band }) {
               className="form-control"
               id="image"
               name="image"
-              value={band.image}
+              value={artist.image}
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="topSongs">Top Songs</label>
+            <input
+              type="text"
+              className="form-control"
+              id="topSongs"
+              name="topSongs"
+              value={artist.topSongs}
               onChange={handleChange}
             />
           </div>
@@ -43,48 +53,33 @@ function BandsNewForm({ handleSubmit, handleChange, band }) {
               className="form-control"
               id="about"
               name="about"
-              value={band.about}
+              value={artist.about}
               onChange={handleChange}
             />
           </div>
 
           <div className="form-group">
-            <label htmlFor="location">Location</label>
-            <input
-              type="text"
-              className="form-control"
-              id="location"
-              name="location"
-              value={band.location}
-              onChange={handleChange}
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="style">Style</label>
+            <label htmlFor="genre">Genre</label>
             <select
               className="form-control"
-              id="style"
-              name="style"
-              value={band.style}
+              id="genre"
+              name="genre"
+              value={artist.genre}
               onChange={handleChange}
             >
               <option value="" disabled>Please Select</option>
               <option>Folk</option>
               <option>Rock</option>
               <option>Pop</option>
-              <option>Metal</option>
-              <option>Jazz</option>
             </select>
           </div>
-
           <div>
             <button className="save-button">Save</button>
           </div>
         </form>
-      </div>
+      </div> */}
     </div>
   );
 }
 
-export default BandsNewForm;
+export default UsersEditForm;

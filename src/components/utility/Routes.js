@@ -7,6 +7,7 @@ import MainIndex from '../bands/MainIndex';
 import BandsNew from '../bands/BandsNew';
 import BandsShow from '../bands/BandsShow';
 import UsersShow from '../users/UsersShow';
+import UsersEdit from '../users/UsersEdit';
 
 
 // import ProtectedRoute from './ProtectedRoute';
@@ -19,6 +20,7 @@ const Routes = () => {
       <Route path="/bandsandusers" component={MainIndex} />
       <Route path="/bands/new" component={BandsNew} />
       <Route path="/bands/:id" component={BandsShow} />
+      <Route path="/users/:id/edit" component={UsersEdit} />
       <Route path="/users/:id" component={UsersShow} />
     </Switch>
   );

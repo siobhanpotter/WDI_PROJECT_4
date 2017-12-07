@@ -2,7 +2,7 @@ import React    from 'react';
 import { Link } from 'react-router-dom';
 import Axios    from 'axios';
 
-// import Auth from '../../lib/Auth';
+import Auth from '../../lib/Auth';
 // import BackButton from '../utility/BackButton';
 
 class BandsShow extends React.Component {
