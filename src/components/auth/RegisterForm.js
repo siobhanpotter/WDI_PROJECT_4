@@ -1,23 +1,24 @@
 import React from 'react';
 
+
+const RegisterForm = ({ handleChange, handleSubmit, user }) => {
 // const RegisterForm = () => {
-// const RegisterForm = ({ handleChange, handleSubmit, user }) => {
-const RegisterForm = () => {
   return (
     <div>
       <h1>Register Form</h1>
-      {/* <form onSubmit={handleSubmit}>
-        <div className="form-group">
+      <form onSubmit={handleSubmit}>
+        {/* add style to div */}
+        <div >
           <input
             type="text"
             name="username"
-            placeholder="Username"
+            placeholder="username"
             onChange={handleChange}
             value={user.username}
             className="form-control"
           />
         </div>
-        <div className="form-group">
+        <div >
           <input
             type="text"
             name="email"
@@ -27,7 +28,7 @@ const RegisterForm = () => {
             className="form-control"
           />
         </div>
-        <div className="form-group">
+        <div >
           <input
             type="password"
             name="password"
@@ -37,7 +38,7 @@ const RegisterForm = () => {
             className="form-control"
           />
         </div>
-        <div className="form-group">
+        <div >
           <input
             type="password"
             name="passwordConfirmation"
@@ -48,8 +49,8 @@ const RegisterForm = () => {
           />
         </div>
 
-        <button className="btn btn-primary">Login</button>
-      </form> */}
+        <button>Login</button>
+      </form>
     </div>
   );
 };

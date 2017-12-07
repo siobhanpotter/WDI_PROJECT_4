@@ -1,15 +1,15 @@
 const Band = require('../models/band');
 
 
-//list of bands on index
-// function bandsIndex(req, res, next) {
-//   Band
-//     .find()
-//     // .populate('createdBy')
-//     .exec()
-//     .then(bands => res.json(bands))
-//     .catch(next);
-// }
+// list of bands on index
+function bandsIndex(req, res, next) {
+  Band
+    .find()
+    // .populate('createdBy')
+    .exec()
+    .then(bands => res.json(bands))
+    .catch(next);
+}
 
 
 //create a band
@@ -18,8 +18,8 @@ function bandsCreate(req, res, next) {
   // if(req.file) req.body.image = req.file.filename;
 
   //created by ->
-  req.body.createdBy = req.user.userId;///????????????????????????
-  req.body.bandMembers = [req.user.userId];
+  // req.body.createdBy = req.user.userId;///????????????????????????
+  // req.body.bandMembers = [req.user.userId];
 
   Band
     .create(req.body)
@@ -32,7 +32,7 @@ function bandsCreate(req, res, next) {
 function bandsShow(req, res, next) {
   Band
     .findById(req.params.id)
-    .populate('bandMembers createdBy')///?????????????????????
+    // .populate('bandMembers createdBy')///?????????????????????
     .exec()
     .then((band) => {
       if(!band) return res.notFound();
@@ -40,7 +40,7 @@ function bandsShow(req, res, next) {
     })
     .catch(next);
 }
-// //
+
 // // //updating your details, this is where you would add details to ?
 function bandsUpdate(req, res, next) {
 
@@ -57,8 +57,8 @@ function bandsUpdate(req, res, next) {
     .then(band => res.json(band))
     .catch(next);
 }
-//
-//
+
+
 // //end membership
 function bandsDelete(req, res, next) {
   Band
@@ -73,7 +73,7 @@ function bandsDelete(req, res, next) {
 }
 
 
-///something like this to request to join a band 
+///something like this to request to join a band
 // function bandsJoin(req, res) {
 //   Band.findById(req.params.id)
 //     .then(band => {
@@ -94,7 +94,7 @@ function bandsDelete(req, res, next) {
 
 module.exports = {
   create: bandsCreate,
-  // index: bandsIndex
+  index: bandsIndex,
   show: bandsShow,
   update: bandsUpdate,
   delete: bandsDelete

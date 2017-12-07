@@ -1,7 +1,5 @@
 const User = require('../models/user');
 
-
-
 //list of musicians
 function usersIndex(req, res, next) {
   User

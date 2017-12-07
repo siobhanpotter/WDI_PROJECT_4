@@ -1,12 +1,14 @@
 import React from 'react';
 
-// const LoginForm = ({ handleChange, handleSubmit, user }) => {
-const LoginForm = () => {
+const LoginForm = ({ handleChange, handleSubmit, user }) => {
+// const LoginForm = () => {
   return (
     <div>
       <h1>Login Form</h1>
-      {/* <form onSubmit={handleSubmit}>
-        <div className="form-group">
+      <form onSubmit={handleSubmit}>
+
+        {/* add class to div to style */}
+        <div>
           <input
             type="text"
             name="email"
@@ -16,7 +18,7 @@ const LoginForm = () => {
             className="form-control"
           />
         </div>
-        <div className="form-group">
+        <div >
           <input
             type="password"
             name="password"
@@ -27,7 +29,7 @@ const LoginForm = () => {
           />
         </div>
         <button className="btn btn-primary">Login</button>
-      </form> */}
+      </form>
     </div>
   );
 };

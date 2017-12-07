@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 // Link
 
+import 'bootstrap-css-only';
 import Routes from './components/utility/Routes';
 
 class App extends React.Component {
