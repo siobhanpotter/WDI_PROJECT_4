@@ -1,10 +1,10 @@
 import React     from 'react';
-import CreateBandForm from './CreateBandForm';
+import BandsNewForm from './BandsNewForm';
 import Axios     from 'axios';
 
 import Auth from '../../lib/Auth';
 
-class CreateBand extends React.Component {
+class BandsNew extends React.Component {
   state = {
     band: {
       username: '',
@@ -35,7 +35,7 @@ class CreateBand extends React.Component {
 
   render() {
     return (
-      <CreateBandForm
+      <BandsNewForm
         handleChange={this.handleChange}
         handleSubmit={this.handleSubmit}
         band={this.state.band}
@@ -44,7 +44,7 @@ class CreateBand extends React.Component {
   }
 }
 
-export default CreateBand;
+export default BandsNew;
 
 
 // const bandSchema = mongoose.Schema({
