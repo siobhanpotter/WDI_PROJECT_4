@@ -5,40 +5,40 @@ import Axios     from 'axios';
 import Auth from '../../lib/Auth';
 
 class CreateBand extends React.Component {
-  // state = {
-  //   band: {
-  //     username: '',
-  //     image: '',
-  //     about: '',
-  //     // members: {},
-  //     location: '',
-  //     style: []
-  //   }
-  // };
-  //
-  //
-  // handleChange = ({ target: { name, value } }) => {
-  //   const band = Object.assign({}, this.state.band, { [name]: value });
-  //   this.setState({ band });
-  // }
-  //
-  // handleSubmit = (e) => {
-  //   e.preventDefault();
-  //
-  //   Axios
-  //     .post('/api/bands', this.state.band, {
-  //       headers: { 'Authorization': `Bearer ${Auth.getToken()}`}
-  //     })
-  //     .then(() => this.props.history.push('/'))
-  //     .catch(err => console.log(err));
-  // }
+  state = {
+    band: {
+      username: '',
+      image: '',
+      about: '',
+      // members: {},
+      location: '',
+      style: []
+    }
+  };
+
+
+  handleChange = ({ target: { name, value } }) => {
+    const band = Object.assign({}, this.state.band, { [name]: value });
+    this.setState({ band });
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+
+    Axios
+      .post('/api/bands', this.state.band, {
+        headers: { 'Authorization': `Bearer ${Auth.getToken()}`}
+      })
+      .then(() => this.props.history.push('/'))
+      .catch(err => console.log(err));
+  }
 
   render() {
     return (
       <CreateBandForm
-        // user={this.state.user}
-        // handleChange={this.handleChange}
-        // handleSubmit={this.handleSubmit}
+        handleChange={this.handleChange}
+        handleSubmit={this.handleSubmit}
+        band={this.state.band}
       />
     );
   }

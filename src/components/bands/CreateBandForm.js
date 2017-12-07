@@ -2,12 +2,12 @@ import React from 'react';
 
 // import BackButton from '../utility/BackButton';
 
-// function CreateBandForm({ handleSubmit, handleChange, artist }) {
-function CreateBandForm() {
+function CreateBandForm({ handleSubmit, handleChange, band }) {
+// function CreateBandForm() {
   return (
     <div>
       <h1>Create Band Form</h1>
-      {/* <div className="row">
+      <div className="row">
         <div className="page-banner col-md-12">
 
         </div>
@@ -17,8 +17,8 @@ function CreateBandForm() {
             <input
               type="text"
               className="form-control"
-              id="band"
-              name="band"
+              id="username"
+              name="username"
               value={band.username}
               onChange={handleChange}
             />
@@ -82,7 +82,7 @@ function CreateBandForm() {
             <button className="save-button">Save</button>
           </div>
         </form>
-      </div> */}
+      </div>
     </div>
   );
 }
