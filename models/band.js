@@ -5,8 +5,10 @@ const bandSchema = mongoose.Schema({
   image: { type: String, required: true },
   about: { type: String },
   location: { type: String, required: true },
-  style: { type: Array, required: true },
-  members: [{ type: mongoose.Schema.ObjectId, ref: 'User' }],
+  style: { type: String, required: true },
+  // members: [{ type: mongoose.Schema.ObjectId, ref: 'User' }],
+  members: { type: String },
+  memberRequired: { type: String }, 
   createdBy: { type: mongoose.Schema.ObjectId, ref: 'User' }
 });
 

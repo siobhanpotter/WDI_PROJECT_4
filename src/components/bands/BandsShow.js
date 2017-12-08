@@ -2,7 +2,7 @@ import React    from 'react';
 import { Link } from 'react-router-dom';
 import Axios    from 'axios';
 
-import Auth from '../../lib/Auth';
+// import Auth from '../../lib/Auth';
 // import BackButton from '../utility/BackButton';
 
 class BandsShow extends React.Component {
@@ -37,6 +37,9 @@ class BandsShow extends React.Component {
           <h3>{this.state.band.artist}</h3>
           <p>{this.state.band.about}</p>
           <h5>{this.state.band.style}</h5>
+          <button>Apply</button>
+          <button>Accept</button>
+          <button>Decline</button>
 
           {/* { Auth.isAuthenticated() && <Link to={`/artists/${this.state.artist.id}/edit`} className="standard-button">
             <i className="fa fa-pencil" aria-hidden="true"></i>Edit

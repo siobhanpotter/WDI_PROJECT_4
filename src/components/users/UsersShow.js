@@ -1,5 +1,5 @@
 import React    from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Axios    from 'axios';
 
 // import Auth from '../../lib/Auth';
@@ -31,12 +31,13 @@ class UsersShow extends React.Component {
       <div className="row">
         <h1>Profile Page</h1>
         <div className="image-tile col-md-6">
-          <img src={this.state.user.image} className="img-responsive" />
+          <img src={this.state.user.image} className="img-responsive" width="20%" />
         </div>
         <div className="col-md-6">
           <h2>{this.state.user.username}</h2>
           <p>{this.state.user.about}</p>
-          <h5>{this.state.user.style}</h5>
+          <h5>{this.state.user.mainInstrument}</h5>
+          <p>{this.state.user.style}</p>
 
           {/* { Auth.isAuthenticated() && <Link to={`/artists/${this.state.artist.id}/edit`} className="standard-button">
             <i className="fa fa-pencil" aria-hidden="true"></i>Edit
@@ -45,7 +46,14 @@ class UsersShow extends React.Component {
           { Auth.isAuthenticated() && <button className="main-button" onClick={this.deleteartist}>
             <i className="fa fa-trash" aria-hidden="true"></i>Delete
           </button>} */}
-          <button>Edit Profile</button>
+
+          { <Link to={`/users/${this.state.user.id}/edit`} className="standard-button">
+            <i className="fa fa-pencil" aria-hidden="true"></i>Edit Profile
+          </Link>}
+          { <Link to={'/bands/new'} className="standard-button">
+            <i className="fa fa-pencil" aria-hidden="true"></i>Create Band
+          </Link>}
+          <h2>Requests</h2>
         </div>
       </div>
     );

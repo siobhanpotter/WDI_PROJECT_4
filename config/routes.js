@@ -2,7 +2,7 @@ const router = require('express').Router();
 const auth  = require('../controllers/auth');
 const users  = require('../controllers/users');
 const bands  = require('../controllers/bands');
-// const requests  = require('../controllers/requests');
+const requests  = require('../controllers/requests');
 // const secureRoute = require('../lib/secureRoute');
 
 
@@ -34,9 +34,9 @@ router.route('/bands/:id')
 
 //REQUEST ROUTES ->
 
-// router.route('/requests')
-//   .post(requests.create)
-//   .get(requests.find);
+router.route('/requests')
+  .post(requests.create);
+// .get(requests.find);
 //
 // router.route('/requests/:id')
 //   .post(requests.accept)

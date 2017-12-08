@@ -49,7 +49,7 @@ const RegisterForm = ({ handleChange, handleSubmit, user }) => {
           />
         </div>
 
-        <button>Login</button>
+        <button>Register</button>
       </form>
     </div>
   );

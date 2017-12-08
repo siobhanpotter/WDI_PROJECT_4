@@ -2,24 +2,24 @@ import React from 'react';
 
 // import BackButton from '../utility/BackButton';
 
-function BandsNewForm({ handleSubmit, handleChange, band }) {
-// function CreateBandForm() {
+// function RequestForm({ handleSubmit, handleChange, band }) {
+function RequestForm() {
   return (
     <div>
-      <h1>Create Band</h1>
-      <div className="row">
+      <h1>Request to join the band</h1>
+      {/* <div className="row">
         <div className="page-banner col-md-12">
 
         </div>
         <form onSubmit={handleSubmit} className="col-md-6">
           <div className="form-group">
-            <label htmlFor="bandName">Band Name</label>
+            <label htmlFor="message">Message</label>
             <input
               type="text"
               className="form-control"
-              id="bandName"
-              name="bandName"
-              value={band.bandName}
+              id="message"
+              name="message"
+              value={request.message}
               onChange={handleChange}
             />
           </div>
@@ -106,12 +106,12 @@ function BandsNewForm({ handleSubmit, handleChange, band }) {
 
 
           <div>
-            <button className="save-button">Save</button>
+            <button>Apply</button>
           </div>
         </form>
-      </div>
+      </div> */}
     </div>
   );
 }
 
-export default BandsNewForm;
+export default RequestForm;

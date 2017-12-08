@@ -8,6 +8,7 @@ import BandsNew from '../bands/BandsNew';
 import BandsShow from '../bands/BandsShow';
 import UsersShow from '../users/UsersShow';
 import UsersEdit from '../users/UsersEdit';
+// import RequestsNew from '../users/RequestsNew';
 
 
 // import ProtectedRoute from './ProtectedRoute';
@@ -22,6 +23,7 @@ const Routes = () => {
       <Route path="/bands/:id" component={BandsShow} />
       <Route path="/users/:id/edit" component={UsersEdit} />
       <Route path="/users/:id" component={UsersShow} />
+      {/* <Route path="/requests/new" component={RequestsNew} /> */}
     </Switch>
   );
 };

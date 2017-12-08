@@ -1,32 +1,31 @@
-// const Request = require('../models/request');
-//
-//
-// function requestCreate(req, res, next) {
-//
-//   req.body.createdBy = req.user.userId;//?
-//   req.body.bandMembers = [req.user.userId];
+const Request = require('../models/request');
+
+function requestsCreate(req, res, next) {
+
+  req.body.createdBy = req.user.userId;//?
+  req.body.bandMembers = [req.user.userId];
+
+  Request
+    .create(req.body)
+    .populate('createdBy')//?
+    .then(request => res.status(201).json(request))
+    .catch(next);
+}
+
+
+// function requestAccept(req, res, next) {
 //
 //   Request
-//     .create(req.body)
-//     .populate('createdBy')//?
-//     .then(request => res.status(201).json(request))
+//
 //     .catch(next);
 // }
 //
+// function requestReject(req, res, next) {
 //
-// // function requestAccept(req, res, next) {
-// //
-// //   Request
-// //
-// //     .catch(next);
-// // }
-// //
-// // function requestReject(req, res, next) {
-// //
-// //   Request
-// //
-// //     .catch(next);
-// // }
+//   Request
+//
+//     .catch(next);
+// }
 //
 // function requestFindAll(req, res, next) {
 //   Request
@@ -38,12 +37,12 @@
 //     })
 //     .catch(next);
 // }
-//
-//
-//
-// module.exports = {
-//   create: requestCreate,
-//   find: requestFindAll
-//   // delete: requestAccept,
-//   // update: requestReject
-// };
+
+
+
+module.exports = {
+  create: requestsCreate
+  // find: requestsFindAll
+  // delete: requestAccept,
+  // update: requestReject
+};

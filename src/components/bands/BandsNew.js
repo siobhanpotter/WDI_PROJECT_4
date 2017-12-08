@@ -11,9 +11,10 @@ class BandsNew extends React.Component {
       image: '',
       about: '',
       location: '',
-      style: [],
-      members: [],
-      createdBy: '' //?????????????????????????
+      style: '',
+      members: '',//will have to change to array
+      lookingFor: '',
+      createdBy: '' //?
     }
   };
 

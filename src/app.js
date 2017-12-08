@@ -6,13 +6,18 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import 'bootstrap-css-only';
 import Routes from './components/utility/Routes';
 
+import Navbar from './components/utility/Navbar';
+
 class App extends React.Component {
 
   render() {
     return (
       <Router>
         <div>
-          <h1>WDI Project 4: MERN Stack App</h1>
+          <header>
+            <h1>Music App</h1>
+            <Navbar />
+          </header>
           <main>
             <Routes />
           </main>
