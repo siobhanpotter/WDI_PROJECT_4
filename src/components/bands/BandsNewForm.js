@@ -13,13 +13,13 @@ function BandsNewForm({ handleSubmit, handleChange, band }) {
         </div>
         <form onSubmit={handleSubmit} className="col-md-6">
           <div className="form-group">
-            <label htmlFor="Band">Band</label>
+            <label htmlFor="bandName">Band Name</label>
             <input
               type="text"
               className="form-control"
-              id="username"
-              name="username"
-              value={band.username}
+              id="bandName"
+              name="bandName"
+              value={band.bandName}
               onChange={handleChange}
             />
           </div>
@@ -77,6 +77,45 @@ function BandsNewForm({ handleSubmit, handleChange, band }) {
               <option>Jazz</option>
             </select>
           </div>
+
+          <div className="form-group">
+            <label htmlFor="members">Members</label>
+            <input
+              type="text"
+              className="form-control"
+              id="members"
+              name="members"
+              value={band.members}
+              onChange={handleChange}
+            />
+            <input
+              type="text"
+              className="form-control"
+              id="members"
+              name="members"
+              value={band.members}
+              onChange={handleChange}
+            />
+            <input
+              type="text"
+              className="form-control"
+              id="members"
+              name="members"
+              value={band.members}
+              onChange={handleChange}
+            />
+            <input
+              type="text"
+              className="form-control"
+              id="members"
+              name="members"
+              value={band.members}
+              onChange={handleChange}
+            />
+          </div>
+
+
+
 
           <div>
             <button className="save-button">Save</button>

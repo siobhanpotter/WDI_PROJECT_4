@@ -2,11 +2,9 @@ const router = require('express').Router();
 const auth  = require('../controllers/auth');
 const users  = require('../controllers/users');
 const bands  = require('../controllers/bands');
-// const bandsUsers  = require('../controllers/bandsUsers');
+// const requests  = require('../controllers/requests');
 // const secureRoute = require('../lib/secureRoute');
 
-// router.route('/bandsusers')
-//   .get(bandsUsers.index);
 
 router.route('/users')
   .get(users.index);
@@ -22,7 +20,7 @@ router.route('/users/:id')
   .put(users.update)
   .delete(users.delete);
 
-//do I need this route ?
+
 router.route('/bands')
   .get(bands.index)
   .post(bands.create);
@@ -31,11 +29,21 @@ router.route('/bands/:id')
   .get(bands.show)
   .put(bands.update)
   .delete(bands.delete);
-  
+// .put(bands.join);//?
 
-//something like this for joining a band
-// router.route('/bands/:id/join')
-//   .put(bands.join);
+
+//REQUEST ROUTES ->
+
+// router.route('/requests')
+//   .post(requests.create)
+//   .get(requests.find);
+//
+// router.route('/requests/:id')
+//   .post(requests.accept)
+//   .post(requests.reject);
+
+
+
 
 
 router.route('/*')

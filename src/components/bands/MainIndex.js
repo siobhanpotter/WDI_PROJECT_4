@@ -27,34 +27,43 @@ class MainIndex extends React.Component {
   render() {
     return (
       <div>
-        <h1>Index Page</h1>
-        <div className="row">
-          {this.state.users.map(user => {
-            return(
-              <div key={user.id} className="image-tile col-md-4 col-sm-6 col-xs-12 tile-padding-margin">
-                <h1>{ user.username }</h1>
-                {/* <h2>{ user.instrument }</h2>
-                <h2>{ user.location }</h2>
-                <h2>{ user.image }</h2>
-                <h2>{ user.instrument }</h2>
-                <h2>{ user.styles }</h2> */}
-              </div>
-            );
-          })}
-        </div>
-        <div className="row">
-          {this.state.bands.map(band => {
-            return(
-              <div key={band.id} className="image-tile col-md-4 col-sm-6 col-xs-12 tile-padding-margin">
-                <h1>{ band.username }</h1>
-                <div className="image-tile col-md-6">
-                  <img src={band.image} className="img-responsive" />
+        <section>
+          <h1>Musicians</h1>
+          <div className="row">
+            {this.state.users.map(user => {
+              return(
+                <div key={user.id} className="image-tile col-md-4 col-sm-6 col-xs-12 tile-padding-margin">
+                  <h1>{ user.username }</h1>
+                  {/* <h2>{ user.instrument }</h2>
+                  <h2>{ user.location }</h2>
+                  <h2>{ user.image }</h2>
+                  <h2>{ user.instrument }</h2>
+                  <h2>{ user.styles }</h2> */}
                 </div>
-              </div>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
+        </section>
+        <section>
+          <h1>Bands</h1>
+          <div className="row">
+            {this.state.bands.map(band => {
+              return(
+                <div key={band.id} className="image-tile col-md-4 col-sm-6 col-xs-12 tile-padding-margin">
+                  <h1>{ band.username }</h1>
+                  <div className="image-tile col-md-6">
+                    <img src={band.image} className="img-responsive" />
+                  </div>
+                  <h2>{ band.style }</h2>
+                  <h2>{ band.createdBy }</h2>
+                  <h2>{ band.location }</h2>
+                </div>
+              );
+            })}
+          </div>
+        </section>
       </div>
+
     );
   }
 }

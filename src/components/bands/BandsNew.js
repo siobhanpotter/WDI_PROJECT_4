@@ -7,12 +7,13 @@ import Auth from '../../lib/Auth';
 class BandsNew extends React.Component {
   state = {
     band: {
-      username: '',
+      bandName: '',
       image: '',
       about: '',
-      // members: {},
       location: '',
-      style: []
+      style: [],
+      members: [],
+      createdBy: '' //?????????????????????????
     }
   };
 

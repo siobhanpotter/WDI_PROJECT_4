@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
 
 const bandSchema = mongoose.Schema({
-  username: { type: String, required: true },//username
+  bandName: { type: String, required: true },
   image: { type: String, required: true },
   about: { type: String },
-  // members: { type: {} },//name:intrument required: true
-  //search by the parameters below
   location: { type: String, required: true },
-  style: { type: Array, required: true }
+  style: { type: Array, required: true },
+  members: [{ type: mongoose.Schema.ObjectId, ref: 'User' }],
+  createdBy: { type: mongoose.Schema.ObjectId, ref: 'User' }
 });
 
 module.exports = mongoose.model('band', bandSchema);

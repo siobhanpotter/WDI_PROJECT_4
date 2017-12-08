@@ -18,7 +18,7 @@ function bandsCreate(req, res, next) {
   // if(req.file) req.body.image = req.file.filename;
 
   //created by ->
-  // req.body.createdBy = req.user.userId;///????????????????????????
+  // req.body.createdBy = req.user.userId;///?
   // req.body.bandMembers = [req.user.userId];
 
   Band
@@ -32,7 +32,7 @@ function bandsCreate(req, res, next) {
 function bandsShow(req, res, next) {
   Band
     .findById(req.params.id)
-    // .populate('bandMembers createdBy')///?????????????????????
+    // .populate('bandMembers createdBy')///?
     .exec()
     .then((band) => {
       if(!band) return res.notFound();
@@ -73,7 +73,7 @@ function bandsDelete(req, res, next) {
 }
 
 
-///something like this to request to join a band
+///something like this to request to join a band?
 // function bandsJoin(req, res) {
 //   Band.findById(req.params.id)
 //     .then(band => {

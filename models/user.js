@@ -2,16 +2,15 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
 const userSchema = new mongoose.Schema({
-  username: { type: String, required: true },//username
+  username: { type: String, required: true },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   image: { type: String },
   about: { type: String },
-  //search by the parameters below
-  instrument: { type: String },
-  additionalInstruments: { type: Array },
+  mainInstrument: { type: String },
+  // additionalInstruments: { type: Array },
   location: { type: String },
-  style: { type: Array }
+  style: { type: String }
 });
 
 userSchema
@@ -21,8 +20,10 @@ userSchema
   });
 
 userSchema.pre('validate', function checkPassword(next) {
-  if(!this._passwordConfirmation || this._passwordConfirmation !== this.password) {
-    this.invalidate('passwordConfirmation', 'Passwords do not match');
+  if (this.isNew) {
+    if(!this._passwordConfirmation || this._passwordConfirmation !== this.password) {
+      this.invalidate('passwordConfirmation', 'Passwords do not match');
+    }
   }
   next();
 });

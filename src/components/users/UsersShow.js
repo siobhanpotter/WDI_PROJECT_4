@@ -29,6 +29,7 @@ class UsersShow extends React.Component {
   render() {
     return (
       <div className="row">
+        <h1>Profile Page</h1>
         <div className="image-tile col-md-6">
           <img src={this.state.user.image} className="img-responsive" />
         </div>
@@ -44,6 +45,7 @@ class UsersShow extends React.Component {
           { Auth.isAuthenticated() && <button className="main-button" onClick={this.deleteartist}>
             <i className="fa fa-trash" aria-hidden="true"></i>Delete
           </button>} */}
+          <button>Edit Profile</button>
         </div>
       </div>
     );

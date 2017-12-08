@@ -6,29 +6,35 @@ import UsersEditForm from './UsersEditForm';
 
 class UsersEdit extends React.Component {
   state = {
-    user: {
-      username: '',
-      email: '',
-      password: '',
+    user: {//do all of these fields need to match the model??
+      // username: '',
+      // email: '',
+      // password: '',
       image: '',
       about: '',
-      instrument: '',
-      additionalInstruments: [],
+      mainInstrument: '',
+      // additionalInstruments: [],
       location: '',
-      style: []
+      style: ''
     }
   };
 
   componentDidMount() {
     Axios
       .get(`/api/users/${this.props.match.params.id}`)
-      .then(res => this.setState({ user: res.data }))
+      .then(res => {
+        const user = Object.assign({}, this.state.user, res.data);
+        this.setState({ user });
+      })
       .catch(err => console.log(err));
   }
 
   handleChange = ({ target: { name, value } }) => {
+    console.log(name, value);
     const user = Object.assign({}, this.state.user, { [name]: value });
-    this.setState({ user });
+    this.setState({ user }, () => {
+      console.log(this.state);
+    });
   }
 
   handleSubmit = (e) => {
@@ -47,10 +53,10 @@ class UsersEdit extends React.Component {
   render() {
     return (
       <UsersEditForm
-        // history={this.props.history}
-        // handleSubmit={this.handleSubmit}
-        // handleChange={this.handleChange}
-        // artist={this.state.user}
+        history={this.props.history}
+        handleSubmit={this.handleSubmit}
+        handleChange={this.handleChange}
+        user={this.state.user}
       />
     );
   }
