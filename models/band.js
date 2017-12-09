@@ -8,8 +8,14 @@ const bandSchema = mongoose.Schema({
   style: { type: String, required: true },
   // members: [{ type: mongoose.Schema.ObjectId, ref: 'User' }],
   members: { type: String },
-  memberRequired: { type: String }, 
-  createdBy: { type: mongoose.Schema.ObjectId, ref: 'User' }
+  memberRequired: { type: String },
+  createdBy: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
 });
+
+
+// bandSchema.methods.belongsTo = function bandBelongsTo(user) {
+//   if(typeof this.createdBy.id === 'string') return this.createdBy.id === user.id;
+//   return user.id === this.createdBy.toString();
+// };
 
 module.exports = mongoose.model('band', bandSchema);

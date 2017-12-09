@@ -4,7 +4,7 @@ const User = require('../models/user');
 function usersIndex(req, res, next) {
   User
     .find()
-    // .populate('createdBy')
+    .populate('createdBy')
     .exec()
     .then(users => res.json(users))
     .catch(next);

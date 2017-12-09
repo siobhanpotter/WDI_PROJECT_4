@@ -1,16 +1,14 @@
 const Band = require('../models/band');
 
-
 // list of bands on index
 function bandsIndex(req, res, next) {
   Band
     .find()
-    // .populate('createdBy')
+    .populate('createdBy')
     .exec()
     .then(bands => res.json(bands))
     .catch(next);
 }
-
 
 //create a band
 function bandsCreate(req, res, next) {
@@ -18,7 +16,7 @@ function bandsCreate(req, res, next) {
   // if(req.file) req.body.image = req.file.filename;
 
   //created by ->
-  // req.body.createdBy = req.user.userId;///?
+  req.body.createdBy = req.user.userId;
   // req.body.bandMembers = [req.user.userId];
 
   Band
@@ -32,7 +30,7 @@ function bandsCreate(req, res, next) {
 function bandsShow(req, res, next) {
   Band
     .findById(req.params.id)
-    // .populate('bandMembers createdBy')///?
+    .populate('createdBy')///?
     .exec()
     .then((band) => {
       if(!band) return res.notFound();

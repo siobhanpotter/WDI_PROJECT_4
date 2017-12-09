@@ -102,9 +102,6 @@ function BandsNewForm({ handleSubmit, handleChange, band }) {
             />
           </div>
 
-
-
-
           <div>
             <button className="save-button">Save</button>
           </div>

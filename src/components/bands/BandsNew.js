@@ -13,8 +13,8 @@ class BandsNew extends React.Component {
       location: '',
       style: '',
       members: '',//will have to change to array
-      lookingFor: '',
-      createdBy: '' //?
+      memberRequired: ''
+      // createdBy: '' //?
     }
   };
 

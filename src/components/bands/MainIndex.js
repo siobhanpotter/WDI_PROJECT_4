@@ -24,6 +24,32 @@ class MainIndex extends React.Component {
   }
 
 
+  // handleSort = (e) => {
+  //   const [sortBy, sortDirection] = e.target.value.split('|');
+  //   this.setState({ sortBy, sortDirection });
+  // }
+  //
+  // handleSearch = (e) => {
+  //   console.log(e.target.value);
+  //   this.setState({ query: e.target.value });
+  // }
+  //
+  //
+  // render() {
+  //   console.log('LOGGING Q IN RENDER METHOD ======> ', this.state.query);
+  //   // console.log(this.state.cheeses);
+  //   const { sortBy, sortDirection, query } = this.state;
+  //   const regex = new RegExp(query, 'i');
+  //   const orderedCheeses = _.orderBy(this.state.cheeses, [sortBy], [sortDirection]);
+  //
+  //   const cheeses = _.filter(orderedCheeses, (cheese) => regex.test(cheese.name));
+  //
+  //   //
+  //   // const cheeses = _.orderBy(this.state.cheeses, ['name'], ['asc']);
+  //   console.log(cheeses);
+
+
+
   render() {
     return (
       <div>
