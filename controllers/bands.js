@@ -4,7 +4,7 @@ const Band = require('../models/band');
 function bandsIndex(req, res, next) {
   Band
     .find()
-    .populate('createdBy')
+    // .populate('createdBy')
     .exec()
     .then(bands => res.json(bands))
     .catch(next);
@@ -16,7 +16,8 @@ function bandsCreate(req, res, next) {
   // if(req.file) req.body.image = req.file.filename;
 
   //created by ->
-  req.body.createdBy = req.user.userId;
+  // req.body.createdBy = req.user.userId;
+  // req.currentUser
   // req.body.bandMembers = [req.user.userId];
 
   Band

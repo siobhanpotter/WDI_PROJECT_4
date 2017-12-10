@@ -15,6 +15,9 @@ class App extends React.Component {
       <Router>
         <div>
           <header>
+            <div>
+              <img src="https://static.pexels.com/photos/8263/pexels-photo.jpg" className="img-responsive"  />
+            </div>
             <h1>Music App</h1>
             <Navbar />
           </header>

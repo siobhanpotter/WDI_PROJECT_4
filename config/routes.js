@@ -3,7 +3,7 @@ const auth  = require('../controllers/auth');
 const users  = require('../controllers/users');
 const bands  = require('../controllers/bands');
 const requests  = require('../controllers/requests');
-// const secureRoute = require('../lib/secureRoute');
+const secureRoute = require('../lib/secureRoute');
 
 
 router.route('/users')
@@ -20,15 +20,14 @@ router.route('/users/:id')
   .put(users.update)
   .delete(users.delete);
 
-
 router.route('/bands')
   .get(bands.index)
-  .post(bands.create);
+  .post(secureRoute, bands.create);
 
 router.route('/bands/:id')
   .get(bands.show)
-  .put(bands.update)
-  .delete(bands.delete);
+  .put(secureRoute, bands.update)
+  .delete(secureRoute, bands.delete);
 // .put(bands.join);//?
 
 
@@ -41,9 +40,6 @@ router.route('/requests')
 // router.route('/requests/:id')
 //   .post(requests.accept)
 //   .post(requests.reject);
-
-
-
 
 
 router.route('/*')

@@ -4,7 +4,7 @@ import _ from 'lodash';
 // import styled from 'styled-components';
 // import Button from '../styled-components/Button.js'
 
-// import SearchBar from '/SearchBar';
+// import SearchBar from './SearchBar';
 import Promise  from 'bluebird';
 import { Link } from 'react-router-dom';
 
@@ -12,9 +12,8 @@ import { Link } from 'react-router-dom';
 
 
 
-class MainIndex extends React.Component {
+class BandsIndex extends React.Component {
   state = {
-    users: [],
     bands: [],
     sortBy: 'bandName',
     sortDirection: 'asc',
@@ -23,7 +22,6 @@ class MainIndex extends React.Component {
 
   componentWillMount() {
     const promises = {
-      users: Axios.get('/api/users').then(res => res.data),
       bands: Axios.get('/api/bands').then(res => res.data)
     };
 
@@ -51,7 +49,7 @@ class MainIndex extends React.Component {
     const regex = new RegExp(query, 'i');
     const orderedBands = _.orderBy(this.state.bands, [sortBy], [sortDirection]);
 
-    const bands = _.filter(orderedBands, (band) => regex.test(band.name));
+    const bands = _.filter(orderedBands, (band) => regex.test(band.bandName));
 
     //
     // const cheeses = _.orderBy(this.state.cheeses, ['name'], ['asc']);
@@ -62,31 +60,8 @@ class MainIndex extends React.Component {
     return (
       <div>
         <section>
-          {/* <Button>hi</Button> */}
-          <h1>Musicians</h1>
-          <div className="row">
-            {this.state.users.map(user => {
-              return(
-                <div key={user.id} className="image-tile col-md-4 col-sm-6 col-xs-12 tile-padding-margin">
 
-                  <div className="image-tile col-md-4">
-                    <img src={user.image} className="img-responsive"  />
-                  </div>
-                  <h1>{ user.username }</h1>
-                  <p>{ user.mainInstrument }</p>
-                  <p>{ user.location }</p>
-                  <h5>{ user.style }</h5>
-                  { <Link to={`/users/${user.id}`} className="standard-button">
-                    <i className="fa fa-pencil" aria-hidden="true"></i>Read More
-                  </Link>}
-                </div>
-              );
-            })}
-          </div>
-        </section>
-        <section>
-
-
+          {/* <SearchBar handleSort={this.handleSort} handleSearch={this.handleSearch} /> */}
 
           <h1>Bands</h1>
           <div className="row">
@@ -114,4 +89,4 @@ class MainIndex extends React.Component {
   }
 }
 
-export default MainIndex;
+export default BandsIndex;
