@@ -2,12 +2,12 @@ import React from 'react';
 
 // import BackButton from '../utility/BackButton';
 
-// function RequestForm({ handleSubmit, handleChange, request }) {
-function RequestForm() {
+function RequestsForm({ handleSubmit, handleChange, request }) {
+// function RequestsForm() {
   return (
     <div>
       <h1>Request to join the band</h1>
-      {/* <div className="row">
+      <div className="row">
         <div className="page-banner col-md-12">
 
         </div>
@@ -28,9 +28,9 @@ function RequestForm() {
             <button>Apply</button>
           </div>
         </form>
-      </div> */}
+      </div>
     </div>
   );
 }
 
-export default RequestForm;
+export default RequestsForm;
