@@ -4,12 +4,11 @@ import _ from 'lodash';
 // import styled from 'styled-components';
 // import Button from '../styled-components/Button.js'
 
-// import SearchBar from './SearchBar';
+import BandsSearchBar from './BandsSearchBar';
 import Promise  from 'bluebird';
 import { Link } from 'react-router-dom';
 
 // import Auth from '../../lib/Auth';
-
 
 
 class BandsIndex extends React.Component {
@@ -52,7 +51,7 @@ class BandsIndex extends React.Component {
     const bands = _.filter(orderedBands, (band) => regex.test(band.bandName));
 
     //
-    // const cheeses = _.orderBy(this.state.cheeses, ['name'], ['asc']);
+    // const bands = _.orderBy(this.state.bands, ['name'], ['asc']);
     console.log(bands);
 
     // render() {
@@ -61,11 +60,11 @@ class BandsIndex extends React.Component {
       <div>
         <section>
 
-          {/* <SearchBar handleSort={this.handleSort} handleSearch={this.handleSearch} /> */}
+          <BandsSearchBar handleSort={this.handleSort} handleSearch={this.handleSearch} />
 
           <h1>Bands</h1>
           <div className="row">
-            {this.state.bands.map(band => {
+            {bands.map(band => {
               return(
                 <div key={band.id} className="image-tile col-md-4 col-sm-6 col-xs-12 tile-padding-margin">
                   <h1>{ band.username }</h1>

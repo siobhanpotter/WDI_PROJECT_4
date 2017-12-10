@@ -4,7 +4,7 @@ import _ from 'lodash';
 // import styled from 'styled-components';
 // import Button from '../styled-components/Button.js'
 
-// import SearchBar from '/SearchBar';
+import UsersSearchBar from './UsersSearchBar';
 import Promise  from 'bluebird';
 import { Link } from 'react-router-dom';
 
@@ -49,11 +49,11 @@ class MainIndex extends React.Component {
     const regex = new RegExp(query, 'i');
     const orderedUsers = _.orderBy(this.state.users, [sortBy], [sortDirection]);
 
-    const bands = _.filter(orderedUsers, (user) => regex.test(user.username));
+    const users = _.filter(orderedUsers, (user) => regex.test(user.username));
 
     //
     // const cheeses = _.orderBy(this.state.cheeses, ['name'], ['asc']);
-    console.log(bands);
+    console.log(users);
 
     // render() {
 
@@ -62,9 +62,12 @@ class MainIndex extends React.Component {
         <section>
           {/* <Button>hi</Button> */}
           <h1>Musicians</h1>
-      
+
+          <UsersSearchBar handleSort={this.handleSort} handleSearch={this.handleSearch} />
+
+
           <div className="row">
-            {this.state.users.map(user => {
+            {users.map(user => {
               return(
                 <div key={user.id} className="image-tile col-md-4 col-sm-6 col-xs-12 tile-padding-margin">
 
