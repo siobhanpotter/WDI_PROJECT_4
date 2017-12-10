@@ -16,9 +16,10 @@ class MainIndex extends React.Component {
   state = {
     users: [],
     bands: [],
-    sortBy: 'bandName',
-    sortDirection: 'asc',
-    query: ''
+    limitTo: 3
+    // sortBy: 'bandName',
+    // sortDirection: 'asc',
+    // query: ''
   }
 
   componentWillMount() {
@@ -33,37 +34,41 @@ class MainIndex extends React.Component {
   }
 
 
-  handleSort = (e) => {
-    const [sortBy, sortDirection] = e.target.value.split('|');
-    this.setState({ sortBy, sortDirection });
-  }
-
-  handleSearch = (e) => {
-    console.log(e.target.value);
-    this.setState({ query: e.target.value });
-  }
-
+  // handleSort = (e) => {
+  //   const [sortBy, sortDirection] = e.target.value.split('|');
+  //   this.setState({ sortBy, sortDirection });
+  // }
+  //
+  // handleSearch = (e) => {
+  //   console.log(e.target.value);
+  //   this.setState({ query: e.target.value });
+  // }
+  //
+  //
+  // render() {
+  //   console.log('LOGGING Q IN RENDER METHOD ======> ', this.state.query);
+  //   // console.log(this.state.cheeses);
+  //   const { sortBy, sortDirection, query } = this.state;
+  //   const regex = new RegExp(query, 'i');
+  //   const orderedBands = _.orderBy(this.state.bands, [sortBy], [sortDirection]);
+  //
+  //   const bands = _.filter(orderedBands, (band) => regex.test(band.name));
+  //
+  //   //
+  //   // const cheeses = _.orderBy(this.state.cheeses, ['name'], ['asc']);
+  //   console.log(bands);
 
   render() {
-    console.log('LOGGING Q IN RENDER METHOD ======> ', this.state.query);
-    // console.log(this.state.cheeses);
-    const { sortBy, sortDirection, query } = this.state;
-    const regex = new RegExp(query, 'i');
-    const orderedBands = _.orderBy(this.state.bands, [sortBy], [sortDirection]);
-
-    const bands = _.filter(orderedBands, (band) => regex.test(band.name));
-
-    //
-    // const cheeses = _.orderBy(this.state.cheeses, ['name'], ['asc']);
-    console.log(bands);
-
-    // render() {
 
     return (
       <div>
         <section>
           {/* <Button>hi</Button> */}
           <h1>Musicians</h1>
+          { <Link to={'/users'} className="standard-button">
+            <i className="fa fa-pencil" aria-hidden="true"></i>View All
+          </Link>}
+
           <div className="row">
             {this.state.users.map(user => {
               return(
@@ -86,9 +91,10 @@ class MainIndex extends React.Component {
         </section>
         <section>
 
-
-
           <h1>Bands</h1>
+          { <Link to={'/bands'} className="standard-button">
+            <i className="fa fa-pencil" aria-hidden="true"></i>View All
+          </Link>}
           <div className="row">
             {this.state.bands.map(band => {
               return(

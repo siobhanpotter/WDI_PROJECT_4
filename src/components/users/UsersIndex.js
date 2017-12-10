@@ -62,6 +62,7 @@ class MainIndex extends React.Component {
         <section>
           {/* <Button>hi</Button> */}
           <h1>Musicians</h1>
+      
           <div className="row">
             {this.state.users.map(user => {
               return(
