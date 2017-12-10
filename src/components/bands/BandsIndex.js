@@ -60,26 +60,31 @@ class BandsIndex extends React.Component {
       <div>
         <section>
 
-          <BandsSearchBar handleSort={this.handleSort} handleSearch={this.handleSearch} />
+          <div>
+            <img src="https://static.pexels.com/photos/8263/pexels-photo.jpg" className="img-responsive"  />
+          </div>
 
-          <h1>Bands</h1>
-          <div className="row">
-            {bands.map(band => {
-              return(
-                <div key={band.id} className="image-tile col-md-4 col-sm-6 col-xs-12 tile-padding-margin">
-                  <h1>{ band.username }</h1>
-                  <div className="image-tile col-md-6">
-                    <img src={band.image} className="img-responsive" />
-                  </div>
-                  <h5>{ band.style }</h5>
-                  <h2>{ band.createdBy }</h2>
-                  <p>{ band.location }</p>
-                  { <Link to={`/bands/${band.id}`} className="standard-button">
+          <BandsSearchBar handleSort={this.handleSort} handleSearch={this.handleSearch} />
+          <div className="container">
+            <h1>Bands</h1>
+            <div className="row">
+              {bands.map(band => {
+                return(
+                  <div key={band.id} className="image-tile col-md-4 col-sm-6 col-xs-12 tile-padding-margin">
+                    <h1>{ band.username }</h1>
+                    <div className="image-tile col-md-6">
+                      <img src={band.image} className="img-responsive" />
+                    </div>
+                    <h5>{ band.style }</h5>
+                    <h2>{ band.createdBy }</h2>
+                    <p>{ band.location }</p>
+                    { <Link to={`/bands/${band.id}`} className="standard-button">
                     <i className="fa fa-pencil" aria-hidden="true"></i>Read More
                   </Link>}
                 </div>
               );
             })}
+          </div>
           </div>
         </section>
       </div>

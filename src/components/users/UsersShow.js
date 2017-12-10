@@ -31,7 +31,7 @@ class UsersShow extends React.Component {
       <div className="row">
         <h1>Profile Page</h1>
         <div className="image-tile col-md-6">
-          <img src={this.state.user.image} className="img-responsive" width="20%" />
+          <img src={this.state.user.image} className="img-responsive" width="50%" />
         </div>
         <div className="col-md-6">
           <h2>{this.state.user.username}</h2>
