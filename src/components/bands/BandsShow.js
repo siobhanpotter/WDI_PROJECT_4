@@ -33,16 +33,16 @@ class BandsShow extends React.Component {
           <img src={this.state.band.image} className="img-responsive" />
         </div>
         <div className="col-md-6">
-          <h2>{this.state.band.title}</h2>
-          <h3>{this.state.band.artist}</h3>
+          <h2>{this.state.band.bandName}</h2>
           <p>{this.state.band.about}</p>
-          <h5>{this.state.band.style}</h5>
+          <h5>Style: {this.state.band.style}</h5>
+          <h5>Member Required: {this.state.band.memberRequired}</h5>
           { <Link to={'/requests/new'} className="standard-button">
             <i className="fa fa-pencil" aria-hidden="true"></i>Apply
           </Link>}
           {/* <button>Apply</button> */}
-          <button>Accept</button>
-          <button>Decline</button>
+          {/* <button>Accept</button>
+          <button>Decline</button> */}
 
           {/* { Auth.isAuthenticated() && <Link to={`/artists/${this.state.artist.id}/edit`} className="standard-button">
             <i className="fa fa-pencil" aria-hidden="true"></i>Edit

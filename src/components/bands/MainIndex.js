@@ -15,8 +15,7 @@ import { Link } from 'react-router-dom';
 class MainIndex extends React.Component {
   state = {
     users: [],
-    bands: [],
-    limitTo: 3
+    bands: []
     // sortBy: 'bandName',
     // sortDirection: 'asc',
     // query: ''
@@ -93,7 +92,7 @@ class MainIndex extends React.Component {
               })}
             </div>
           </section>
-          
+
           <section>
             <h1>Bands</h1>
             { <Link to={'/bands'} className="standard-button">
@@ -103,7 +102,7 @@ class MainIndex extends React.Component {
               {this.state.bands.map(band => {
                 return(
                   <div key={band.id} className="image-tile col-md-4   col-sm-6 col-xs-12 tile-padding-margin">
-                    <h1>{ band.username }</h1>
+                    <h1>{ band.bandName }</h1>
                     <div className="image-tile col-md-6">
                       <img src={band.image} className="img-responsive" />
                     </div>

@@ -1,4 +1,6 @@
 import React from 'react';
+// import Select from 'react-select';
+import 'react-select/dist/react-select.css';
 
 // import BackButton from '../utility/BackButton';
 
@@ -77,6 +79,18 @@ function BandsNewForm({ handleSubmit, handleChange, band }) {
               <option>Jazz</option>
             </select>
           </div>
+
+          {/* <div className="form-group">
+            <Select
+              name="form-field-name"
+              value={this.state.selectedOption.value}
+              onChange={this.handleChange}
+              options={[
+                { value: 'one', label: 'One' },
+                { value: 'two', label: 'Two' }
+              ]}
+            />
+          </div> */}
 
           <div className="form-group">
             <label htmlFor="members">Members</label>

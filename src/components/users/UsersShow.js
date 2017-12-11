@@ -36,8 +36,8 @@ class UsersShow extends React.Component {
         <div className="col-md-6">
           <h2>{this.state.user.username}</h2>
           <p>{this.state.user.about}</p>
-          <h5>{this.state.user.mainInstrument}</h5>
-          <p>{this.state.user.style}</p>
+          <h5>Instrument: {this.state.user.mainInstrument}</h5>
+          <p>Style: {this.state.user.style}</p>
 
           {/* { Auth.isAuthenticated() && <Link to={`/artists/${this.state.artist.id}/edit`} className="standard-button">
             <i className="fa fa-pencil" aria-hidden="true"></i>Edit

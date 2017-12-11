@@ -1,4 +1,6 @@
 import React from 'react';
+import Select from 'react-select';
+import 'react-select/dist/react-select.css';
 
 // import BackButton from '../utility/BackButton';
 
@@ -104,6 +106,7 @@ function UsersEditForm({ handleSubmit, handleChange, user }) {
               value={user.style}
               onChange={handleChange}
             >
+
               <option value="" disabled>Please Select</option>
               <option>Folk</option>
               <option>Rock</option>
@@ -112,6 +115,9 @@ function UsersEditForm({ handleSubmit, handleChange, user }) {
               <option>Jazz</option>
             </select>
           </div>
+
+          
+
 
           <div>
             <button className="save-button">Save</button>

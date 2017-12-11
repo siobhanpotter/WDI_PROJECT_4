@@ -13,9 +13,9 @@ const bandSchema = mongoose.Schema({
 });
 
 
-bandSchema.methods.belongsTo = function bandBelongsTo(user) {
-  if(typeof this.createdBy.id === 'string') return this.createdBy.id === user.id;
-  return user.id === this.createdBy.toString();
-};
+// bandSchema.methods.belongsTo = function bandBelongsTo(user) {
+//   if(typeof this.createdBy.id === 'string') return this.createdBy.id === user.id;
+//   return user.id === this.createdBy.toString();
+// };
 
 module.exports = mongoose.model('band', bandSchema);

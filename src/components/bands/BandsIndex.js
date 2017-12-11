@@ -8,6 +8,8 @@ import BandsSearchBar from './BandsSearchBar';
 import Promise  from 'bluebird';
 import { Link } from 'react-router-dom';
 
+// import GoogleMap from '../maps/GoogleMap';
+
 // import Auth from '../../lib/Auth';
 
 
@@ -71,7 +73,7 @@ class BandsIndex extends React.Component {
               {bands.map(band => {
                 return(
                   <div key={band.id} className="image-tile col-md-4 col-sm-6 col-xs-12 tile-padding-margin">
-                    <h1>{ band.username }</h1>
+                    <h1>{ band.bandName }</h1>
                     <div className="image-tile col-md-6">
                       <img src={band.image} className="img-responsive" />
                     </div>
@@ -79,14 +81,15 @@ class BandsIndex extends React.Component {
                     <h2>{ band.createdBy }</h2>
                     <p>{ band.location }</p>
                     { <Link to={`/bands/${band.id}`} className="standard-button">
-                    <i className="fa fa-pencil" aria-hidden="true"></i>Read More
-                  </Link>}
-                </div>
-              );
-            })}
-          </div>
+                      <i className="fa fa-pencil" aria-hidden="true"></i>Read More
+                    </Link>}
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </section>
+
       </div>
 
     );

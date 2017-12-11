@@ -34,7 +34,7 @@ router.route('/bands/:id')
 //REQUEST ROUTES ->
 
 router.route('/requests')
-  .post(requests.create);
+  .post(secureRoute, requests.create);
 // .get(requests.find);
 //
 // router.route('/requests/:id')

@@ -10,6 +10,9 @@ import { Link } from 'react-router-dom';
 
 // import Auth from '../../lib/Auth';
 
+import GoogleMap from '../maps/GoogleMap';
+import '../../scss/style.scss';
+
 
 
 class MainIndex extends React.Component {
@@ -89,6 +92,9 @@ class MainIndex extends React.Component {
               );
             })}
           </div>
+        </section>
+        <section>
+          <GoogleMap center={this.state.center} />
         </section>
       </div>
 
