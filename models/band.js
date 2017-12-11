@@ -6,8 +6,8 @@ const bandSchema = mongoose.Schema({
   about: { type: String },
   location: { type: String, required: true },
   style: { type: String, required: true },
-  // members: [{ type: mongoose.Schema.ObjectId, ref: 'User' }],
-  members: { type: String },
+  members: [{ type: mongoose.Schema.ObjectId, ref: 'User' }],
+  // members: { type: String },
   memberRequired: { type: String },
   createdBy: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
 });
@@ -18,4 +18,4 @@ const bandSchema = mongoose.Schema({
 //   return user.id === this.createdBy.toString();
 // };
 
-module.exports = mongoose.model('band', bandSchema);
+module.exports = mongoose.model('Band', bandSchema);

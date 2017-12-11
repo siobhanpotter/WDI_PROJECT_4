@@ -62,9 +62,9 @@ class BandsIndex extends React.Component {
       <div>
         <section>
 
-          <div>
+          {/* <div>
             <img src="https://static.pexels.com/photos/8263/pexels-photo.jpg" className="img-responsive"  />
-          </div>
+          </div> */}
 
           <BandsSearchBar handleSort={this.handleSort} handleSearch={this.handleSearch} />
           <div className="container">
@@ -74,8 +74,8 @@ class BandsIndex extends React.Component {
                 return(
                   <div key={band.id} className="image-tile col-md-4 col-sm-6 col-xs-12 tile-padding-margin">
                     <h1>{ band.bandName }</h1>
-                    <div className="image-tile col-md-6">
-                      <img src={band.image} className="img-responsive" />
+                    <div className="image-tile col-md-6 img-container">
+                      <img src={band.image} className="img-responsive band-img" />
                     </div>
                     <h5>{ band.style }</h5>
                     <h2>{ band.createdBy }</h2>

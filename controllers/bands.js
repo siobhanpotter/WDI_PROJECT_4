@@ -71,21 +71,16 @@ function bandsDelete(req, res, next) {
     .catch(next);
 }
 
-
-///something like this to request to join a band?
+//
+// something like this to request to join a band?
 // function bandsJoin(req, res) {
 //   Band.findById(req.params.id)
 //     .then(band => {
-//       if (band.bandMembers.indexOf(req.user.userId) === -1) {
 //         band.bandMembers.push(req.user.userId);
 //         band.save();
 //         return res.status(200).json(band);
-//       } else {
-//         return res
-//           .status(500)
-//           .json({ message: 'User already in this band' });
-//       }
-//     })
+//       })
+//     }
 //     .catch(() =>
 //       res.status(500).json({ message: 'Something went very wrong.' })
 //     );

@@ -1,3 +1,12 @@
+.nav {
+  background-color: black;
+  color: white;
+  height: 65px;
+  border-top: 5px solid red;
+  font-size: 20px;
+}
+
+
 html, body {
   padding: 0;
   margin: 0;
@@ -5,4 +14,44 @@ html, body {
 
 .google-map {
   height: 100vh;
+}
+
+
+.section-one-outer {
+  background-color: white;
+  padding: 50px 0px;
+}
+
+.section-two-outer {
+  // background-color: #F4F4F4;
+  background-color: #DBDBDB;
+  // background-color: grey;
+  padding: 50px 0px;
+}
+
+.tile-padding-margin {
+  margin: 3px;
+  padding: 2px;
+  border: 2px solid grey;
+  border-radius: 30px;
+  // background-color: #9B9B9B;
+}
+
+.image-top {
+  margin: 10px 0px;
+}
+
+.band-img {
+ position: absolute;
+  top: 0;
+  left: 0;
+  width:100%;
+}
+
+
+.img-container {
+
+   position:relative;
+   padding-top:66.59%;
+    overflow: hidden;
 }

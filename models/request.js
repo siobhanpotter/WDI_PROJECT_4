@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 
 const requestSchema = mongoose.Schema({
   message: { type: String },
-  sender_id: { type: mongoose.Schema.ObjectId, ref: 'User' },
-  reciever_id: { type: String },//??
-  status: { type: Boolean },//?? could it be set to false -if accepted changed to true?
-  band: { type: mongoose.Schema.ObjectId, ref: 'Band'}//??
+  sender: { type: mongoose.Schema.ObjectId, ref: 'User' },
+  reciever: { type: mongoose.Schema.ObjectId, ref: 'User' },
+  band: { type: mongoose.Schema.ObjectId, ref: 'Band'},
+  status: { type: String, default: 'pending' }
 });
 
-module.exports = mongoose.model('request', requestSchema);
+module.exports = mongoose.model('Request', requestSchema);

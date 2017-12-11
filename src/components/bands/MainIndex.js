@@ -62,61 +62,66 @@ class MainIndex extends React.Component {
     return (
       <div>
         <div>
-          <img src="https://static.pexels.com/photos/8263/pexels-photo.jpg" className="img-responsive"  />
-        </div>
-        <div className="container">
-          <section>
-            {/* <Button>hi</Button> */}
-            <h1>Musicians</h1>
-            { <Link to={'/users'} className="standard-button">
-              <i className="fa fa-pencil" aria-hidden="true"></i>View All
-            </Link>}
+          {/* <div>
+            <img src="https://static.pexels.com/photos/8263/pexels-photo.jpg" className="img-responsive"  />
+          </div> */}
 
-            <div className="row">
-              {this.state.users.map(user => {
-                return(
-                  <div key={user.id} className="image-tile col-md-4   col-sm-6 col-xs-12 tile-padding-margin">
+          <div className="section-one-outer">
+            <section className="container">
 
-                    <div className="image-tile col-md-6">
-                      <img src={user.image} className="img-responsive"    />
+              <h1>Musicians</h1>
+              { <Link to={'/users'} className="standard-button">
+                <i className="fa fa-pencil" aria-hidden="true"></i>View All
+              </Link>}
+
+              <div className="row">
+                {this.state.users.map(user => {
+                  return(
+                    <div key={user.id} className="image-tile col-md-4   col-sm-6 col-xs-12 tile-padding-margin">
+
+                      <div className="image-tile col-md-6 margin-top">
+                        <img src={user.image} className="img-responsive"/>
+                      </div>
+                      <h1>{ user.username }</h1>
+                      <p>{ user.mainInstrument }</p>
+                      <h5>{ user.style }</h5>
+                      <p>{ user.location }</p>
+                      { <Link to={`/users/${user.id}`}   className="standard-button">
+                        <i className="fa fa-pencil"   aria-hidden="true"></i>Read More
+                      </Link>}
                     </div>
-                    <h1>{ user.username }</h1>
-                    <p>{ user.mainInstrument }</p>
-                    <h5>{ user.style }</h5>
-                    <p>{ user.location }</p>
-                    { <Link to={`/users/${user.id}`}   className="standard-button">
-                      <i className="fa fa-pencil"   aria-hidden="true"></i>Read More
-                    </Link>}
-                  </div>
-                );
-              })}
-            </div>
-          </section>
+                  );
+                })}
+              </div>
+            </section>
+          </div>
 
-          <section>
-            <h1>Bands</h1>
-            { <Link to={'/bands'} className="standard-button">
-              <i className="fa fa-pencil" aria-hidden="true"></i>View All
-            </Link>}
-            <div className="row">
-              {this.state.bands.map(band => {
-                return(
-                  <div key={band.id} className="image-tile col-md-4   col-sm-6 col-xs-12 tile-padding-margin">
-                    <h1>{ band.bandName }</h1>
-                    <div className="image-tile col-md-6">
-                      <img src={band.image} className="img-responsive" />
+          <div className="section-two-outer">
+            <section className="container">
+              <h1>Bands</h1>
+              { <Link to={'/bands'} className="standard-button">
+                <i className="fa fa-pencil" aria-hidden="true"></i>View   All
+              </Link>}
+              <div className="row">
+                {this.state.bands.map(band => {
+                  return(
+                    <div key={band.id} className="image-tile col-md-4     col-sm-6 col-xs-12 tile-padding-margin">
+                      <h1>{ band.bandName }</h1>
+                      <div className="image-tile col-md-6 ">
+                        <img src={band.image} className="img-responsive"   />
+                      </div>
+                      <h5>{ band.style }</h5>
+                      <h2>{ band.createdBy }</h2>
+                      <p>{ band.location }</p>
+                      { <Link to={`/bands/${band.id}`}     className="standard-button">
+                        <i className="fa fa-pencil"   aria-hidden="true"></i>Read More
+                      </Link>}
                     </div>
-                    <h5>{ band.style }</h5>
-                    <h2>{ band.createdBy }</h2>
-                    <p>{ band.location }</p>
-                    { <Link to={`/bands/${band.id}`}   className="standard-button">
-                      <i className="fa fa-pencil"   aria-hidden="true"></i>Read More
-                    </Link>}
-                  </div>
-                );
-              })}
-            </div>
-          </section>
+                  );
+                })}
+              </div>
+            </section>
+          </div>
         </div>
       </div>
 

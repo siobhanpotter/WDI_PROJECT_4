@@ -7,12 +7,22 @@ import Auth from '../../lib/Auth';
 class RequestsNew extends React.Component {
   state = {
     request: {
-      message: ''
-      // sender_id: ,
-      // reciever_id: ,
-      // status: ,
+      message: '',
+      reciever: '',
+      band: ''
     }
   };
+
+  componentDidMount() {
+    Axios
+      .get(`/api/bands/${this.props.match.params.id}`)
+      .then(res => {
+        const request = Object.assign({}, this.state.request, { reciever: res.data.createdBy._id, band: res.data._id});
+        this.setState({ request });
+      });
+  }
+
+  // this.setState({ request: { band: res.data._id } })
 
 
   handleChange = ({ target: { name, value } }) => {

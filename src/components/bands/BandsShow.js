@@ -37,7 +37,7 @@ class BandsShow extends React.Component {
           <p>{this.state.band.about}</p>
           <h5>Style: {this.state.band.style}</h5>
           <h5>Member Required: {this.state.band.memberRequired}</h5>
-          { <Link to={'/requests/new'} className="standard-button">
+          { <Link to={`/bands/${this.state.band.id}/requests/new`} className="standard-button">
             <i className="fa fa-pencil" aria-hidden="true"></i>Apply
           </Link>}
           {/* <button>Apply</button> */}

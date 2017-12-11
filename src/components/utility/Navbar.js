@@ -13,7 +13,9 @@ const Navbar = ({ history }) => {
   }
 
   return(
-    <nav>
+    <nav className="nav">
+      { <Link to="/" className="standard-button" ><strong>Music App</strong></Link>}
+      {' '}
       { <Link to="/" className="standard-button" >Home</Link>}
       {' '}
       { <Link to="/bandsandusers" className="standard-button" >Index</Link>}
