@@ -12,9 +12,8 @@ class BandsNew extends React.Component {
       about: '',
       location: '',
       style: '',
-      members: [],//will have to change to array
+      members: [],
       memberRequired: ''
-      // createdBy: '' //?
     },
     removeSelected: true,
     members: [],
@@ -29,8 +28,9 @@ class BandsNew extends React.Component {
         const members = res.data.map(member => {
           return { label: member.username, value: member.id };
         });
-        this.setState({members});
-        // console.log(members);
+        this.setState({members}, () => {
+          console.log(this.state.members);
+        });
       })
       .catch(err => this.setState({ errors: err.response.data.errors }));
   }
@@ -43,7 +43,8 @@ class BandsNew extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const bandMembers = this.state.value.map(member => member.id);
+    const bandMembers = this.state.value.map(member => member.value);
+    console.log(bandMembers);
     const band = Object.assign({}, this.state.band, { members: bandMembers });
     console.log(band);
     this.setState({ band }, () => {

@@ -3,7 +3,7 @@ import React from 'react';
 import MultiSelect from '../utility/MultiSelect';
 
 const BandsNewForm = ({ handleSubmit, handleChange, band, handleSelectChange, removeSelected, value, members }) => {
-// function CreateBandForm() {
+// const BandsNewForm = ({ handleSubmit, handleChange, band }) => {
   return (
     <div>
       <h1>Create Band</h1>

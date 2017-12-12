@@ -7,10 +7,12 @@ import Axios    from 'axios';
 
 class BandsShow extends React.Component {
   state = {
-    band: {}
+    band: null
   }
 
   componentWillMount() {
+    console.log('mounting');
+
     Axios
       .get(`/api/bands/${this.props.match.params.id}`)
       .then(res => this.setState({ band: res.data }))
@@ -27,6 +29,7 @@ class BandsShow extends React.Component {
   // }
 
   render() {
+    if (!this.state.band) return null;
     return (
       <div className="row">
         <div className="image-tile col-md-6">
@@ -36,6 +39,13 @@ class BandsShow extends React.Component {
           <h2>{this.state.band.bandName}</h2>
           <p>{this.state.band.about}</p>
           <h5>Style: {this.state.band.style}</h5>
+          <h5>Created By: {this.state.band.createdBy.username}</h5>
+
+          <h3>members: {this.state.band.members && this.state.band.members.map(member => <div key={member._id}>
+            {member.username}
+          </div>)}</h3>
+
+          {/* <h5>Members: {this.state.band.bandMembers}</h5> */}
           <h5>Member Required: {this.state.band.memberRequired}</h5>
           { <Link to={`/bands/${this.state.band.id}/requests/new`} className="standard-button">
             <i className="fa fa-pencil" aria-hidden="true"></i>Apply

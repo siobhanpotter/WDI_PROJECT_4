@@ -40,10 +40,8 @@ router.route('/requests')
 router.route('/requests/find')
   .get(secureRoute, requests.find);
 
-router.route('/requests/:id/accept')
-  .put(secureRoute, requests.accept);
-// router.route('/requests/:id/reject')
-//   .put(secureRoute, requests.reject);
+router.route('/requests/:id/respond')
+  .put(secureRoute, requests.respond);
 
 
 // .get(requests.find);

@@ -9,12 +9,17 @@ function requestsIndex(req, res, next) {
 }
 
 function requestsFind(req, res, next) {
+
   Request
-    .find({ reciever: req.currentUser._id })
+    .find({ reciever: req.currentUser._id, sender: { $ne: req.currentUser._id }, status: 'pending' })
     .populate('sender reciever band')
     .then(requests => {
       if(!requests) res.notFound();
+      // const requestsWhereImNotSender = requests.filter(request => {
+      //   return `${request.sender._id}` !== `${request.reciever._id}`;
+      // });
 
+      // console.log(requestsWhereImNotSender);
       res.status(200).json(requests);
     })
     .catch(next);
@@ -22,83 +27,40 @@ function requestsFind(req, res, next) {
 
 function requestsCreate(req, res, next) {
   req.body.sender = req.currentUser._id;
+  console.log(req.body);
 
+  //FIRST CHECK --> make sure that the req.body.sender and req.body.reciever are not the same
+  
+
+  //find all of the requests to that specific band
+  //.then(requests =>
+  //  const filteredRequests = requests.filter(request => request.sender.id === req.currentUser && request.band === req.body.band ); <-- if this array is empy, then you can create the request, otherwise send status of 500
+  //  return Request.create(req.body)
+  // )
+  //.then(request => re)
+  //.catch(next);
   Request
     .create(req.body)
     .then(request => res.status(201).json(request))
     .catch(next);
 }
 
-// REQUESTS ACCEPT
-// find request by id in url
-// change requests status to 'accepted'
-// find band by request.band
-// push sender from request into band.members
-// save band
-// return request with accepted status as res
-
-
-function requestsAccept(req, res, next) {
+function requestsRespond(req, res, next) {
   Request
     .findById(req.params.id)
     .exec()
     .then(request => {
-      request.status = 'accepted';
+      request.status = req.body.status;
       return request.save();
     })
     .then(request => res.json(request))
     .catch(next);
 }
 
-//REJECT FUNCTION
-// find request by id in url
-// change requests status to 'rejected'
-// save request
-// return request with rejected status as res
-
-
-// function requestsReject(req, res, next) {
-//   Request
-//     .findByIdAndUpdate(req.params.id, { status: 'rejected' }, { new: true })
-//   req.save()
-//     .then(request => res.status(200).json(request))
-//
-// }
-
-
-// function requestAccept(req, res, next) {
-//
-//   Request
-//
-//     .catch(next);
-// }
-//
-// function requestReject(req, res, next) {
-//
-//   Request
-//
-//     .catch(next);
-// }
-
-// find based on the current user
-
-// function requestFindAll(req, res, next) {
-//   Request
-//     .findById(req.params.id)
-//     .exec()
-//     .then((request) => {
-//       if(!request) return res.notFound();
-//       res.json(request);
-//     })
-//     .catch(next);
-// }
-
-
 
 module.exports = {
   index: requestsIndex,
   create: requestsCreate,
   find: requestsFind,
-  accept: requestsAccept
-  // reject: requestsReject
+  respond: requestsRespond
 };
