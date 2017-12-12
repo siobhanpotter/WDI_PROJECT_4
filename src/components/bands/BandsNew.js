@@ -15,6 +15,7 @@ class BandsNew extends React.Component {
       members: '',//will have to change to array
       memberRequired: ''
       // createdBy: '' //?
+      
     }
   };
 
@@ -35,11 +36,18 @@ class BandsNew extends React.Component {
       .catch(err => console.log(err));
   }
 
+
+  handleMultiSelectChange = (selectedOption) => {
+    this.setState({ selectedOption });
+    console.log(`Selected: ${selectedOption.label}`);
+  }
+
   render() {
     return (
       <BandsNewForm
         handleChange={this.handleChange}
         handleSubmit={this.handleSubmit}
+        handleMultiSelectChange={this.handleMultiSelectChange}
         band={this.state.band}
       />
     );

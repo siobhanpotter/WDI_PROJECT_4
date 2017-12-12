@@ -1,5 +1,5 @@
 import React from 'react';
-// import Select from 'react-select';
+import Select from 'react-select';
 import 'react-select/dist/react-select.css';
 
 
@@ -82,19 +82,19 @@ function BandsNewForm({ handleSubmit, handleChange, band }) {
             </select>
           </div>
 
-          {/* <div className="form-group">
-            <Select
-              name="form-field-name"
-              value={this.state.selectedOption.value}
-              onChange={this.handleChange}
-              options={[
-                { value: 'one', label: 'One' },
-                { value: 'two', label: 'Two' }
-              ]}
-            />
-          </div> */}
 
-          <div className="form-group">
+          <Select
+            name="members"
+            value={band.members}
+            onChange={this.handleMultiSelectChange}
+            options={[
+              { value: 'one', label: 'One' },
+              { value: 'two', label: 'Two' }
+            ]}
+          />
+
+
+          {/* <div className="form-group">
             <label htmlFor="members">Members</label>
             <input
               type="text"
@@ -104,7 +104,7 @@ function BandsNewForm({ handleSubmit, handleChange, band }) {
               value={band.members}
               onChange={handleChange}
             />
-          </div>
+          </div> */}
 
           <div className="form-group">
             <label htmlFor="memberRequired">Member Required</label>
