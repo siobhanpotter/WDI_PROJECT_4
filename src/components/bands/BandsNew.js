@@ -12,12 +12,28 @@ class BandsNew extends React.Component {
       about: '',
       location: '',
       style: '',
-      members: '',//will have to change to array
+      members: [],//will have to change to array
       memberRequired: ''
       // createdBy: '' //?
-      
-    }
-  };
+    },
+    removeSelected: true,
+    members: [],
+    value: []
+  }
+
+
+  componentDidMount() {
+    Axios
+      .get('/api/users')
+      .then(res => {
+        const members = res.data.map(member => {
+          return { label: member.username, value: member.id };
+        });
+        this.setState({members});
+        // console.log(members);
+      })
+      .catch(err => this.setState({ errors: err.response.data.errors }));
+  }
 
 
   handleChange = ({ target: { name, value } }) => {
@@ -27,19 +43,23 @@ class BandsNew extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
+    const bandMembers = this.state.value.map(member => member.id);
+    const band = Object.assign({}, this.state.band, { members: bandMembers });
+    console.log(band);
+    this.setState({ band }, () => {
 
-    Axios
-      .post('/api/bands', this.state.band, {
-        headers: { 'Authorization': `Bearer ${Auth.getToken()}`}
-      })
-      .then(() => this.props.history.push('/'))
-      .catch(err => console.log(err));
+      Axios
+        .post('/api/bands', this.state.band, {
+          headers: { 'Authorization': `Bearer ${Auth.getToken()}`}
+        })
+        .then(() => this.props.history.push('/'))
+        .catch(err => console.log(err));
+    });
   }
 
 
-  handleMultiSelectChange = (selectedOption) => {
-    this.setState({ selectedOption });
-    console.log(`Selected: ${selectedOption.label}`);
+  handleSelectChange = (value) => {
+    this.setState({ value });
   }
 
   render() {
@@ -47,8 +67,8 @@ class BandsNew extends React.Component {
       <BandsNewForm
         handleChange={this.handleChange}
         handleSubmit={this.handleSubmit}
-        handleMultiSelectChange={this.handleMultiSelectChange}
-        band={this.state.band}
+        handleSelectChange={this.handleSelectChange}
+        {...this.state}
       />
     );
   }

@@ -21,7 +21,7 @@ const Routes = () => {
     <Switch>
       <Route path="/login" component={Login} />
       <Route path="/register" component={Register} />
-      <Route path="/bandsandusers" component={MainIndex} />
+      <Route path="/discover" component={MainIndex} />
       <Route path="/bands/:id/requests/new" component={RequestsNew} />
       <Route path="/bands/new" component={BandsNew} />
       <Route path="/bands/:id" component={BandsShow} />

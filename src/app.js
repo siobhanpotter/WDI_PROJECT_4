@@ -4,6 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 // Link
 
 import 'bootstrap-css-only';
+import 'react-select/dist/react-select.css';
 import Routes from './components/utility/Routes';
 
 import Navbar from './components/utility/Navbar';

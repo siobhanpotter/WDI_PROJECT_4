@@ -4,7 +4,7 @@ const Band = require('../models/band');
 function bandsIndex(req, res, next) {
   Band
     .find()
-    // .populate('createdBy')
+    .populate('members')
     .exec()
     .then(bands => res.json(bands))
     .catch(next);
@@ -31,7 +31,8 @@ function bandsCreate(req, res, next) {
 function bandsShow(req, res, next) {
   Band
     .findById(req.params.id)
-    .populate('createdBy')///?
+    // .populate('createdBy')///?
+    .populate('members')
     .exec()
     .then((band) => {
       if(!band) return res.notFound();

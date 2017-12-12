@@ -1,5 +1,4 @@
 const Request = require('../models/request');
-const Band = require('../models/band');
 
 function requestsIndex(req, res, next) {
   Request
@@ -40,29 +39,14 @@ function requestsCreate(req, res, next) {
 
 
 function requestsAccept(req, res, next) {
-  console.log('Id of request: req.params.id is: ', req.params.id);
-
   Request
-    .findByIdAndUpdate(req.params.id, { status: 'accepted' }, { new: true })//new means that the new version will be sent back
+    .findById(req.params.id)
+    .exec()
     .then(request => {
-      console.log('returned request from .then', request);
-      res.status(201).json(request);
-      console.log(request.sender); //id of the sender
-      console.log(request.band); //id of the band
-
-      const sender = request.sender;
-      const band = request.band;
-
-      Band
-        .findById(band)
-        // .then(band => console.log('this is the return band: ', band))
-        .then(band =>{
-          band.members.push(sender);
-          band.save();
-          return res.status(200).json(band);
-        });
-    // .catch(next);
+      request.status = 'accepted';
+      return request.save();
     })
+    .then(request => res.json(request))
     .catch(next);
 }
 

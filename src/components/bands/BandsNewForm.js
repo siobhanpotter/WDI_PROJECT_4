@@ -1,12 +1,8 @@
 import React from 'react';
-import Select from 'react-select';
-import 'react-select/dist/react-select.css';
 
+import MultiSelect from '../utility/MultiSelect';
 
-
-// import BackButton from '../utility/BackButton';
-
-function BandsNewForm({ handleSubmit, handleChange, band }) {
+const BandsNewForm = ({ handleSubmit, handleChange, band, handleSelectChange, removeSelected, value, members }) => {
 // function CreateBandForm() {
   return (
     <div>
@@ -83,16 +79,12 @@ function BandsNewForm({ handleSubmit, handleChange, band }) {
           </div>
 
 
-          <Select
-            name="members"
-            value={band.members}
-            onChange={this.handleMultiSelectChange}
-            options={[
-              { value: 'one', label: 'One' },
-              { value: 'two', label: 'Two' }
-            ]}
+          <MultiSelect
+            handleSelectChange={handleSelectChange}
+            removeSelected={removeSelected}
+            options={members}
+            value={value}
           />
-
 
           {/* <div className="form-group">
             <label htmlFor="members">Members</label>
@@ -125,6 +117,6 @@ function BandsNewForm({ handleSubmit, handleChange, band }) {
       </div>
     </div>
   );
-}
+};
 
 export default BandsNewForm;

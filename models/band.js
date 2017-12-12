@@ -7,7 +7,7 @@ const bandSchema = mongoose.Schema({
   location: { type: String, required: true },
   style: { type: String, required: true },
   members: [{ type: mongoose.Schema.ObjectId, ref: 'User' }],
-  // members: { type: String },
+  // members: [{ type: String }],
   memberRequired: { type: String },
   createdBy: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
 });
