@@ -3,14 +3,19 @@ import RegisterForm from './RegisterForm';
 import Axios        from 'axios';
 
 import Auth from '../../lib/Auth';
+// import AutoComplete from '../utility/AutoComplete';
+// import GoogleMap from '../maps/GoogleMap';
+
 
 class Register extends React.Component {
   state = {
     user: {
       username: '',
+      name: '',
       email: '',
       password: '',
-      passwordConfirmation: ''
+      passwordConfirmation: '',
+      formatted_address: ''
     }
   };
 
@@ -26,9 +31,15 @@ class Register extends React.Component {
       .post('/api/register', this.state.user)
       .then(res => {
         Auth.setToken(res.data.token);
-        this.props.history.push('/bandsandusers');
+        this.props.history.push('/discover');
       })
       .catch(err => console.log(err));
+  }
+
+
+  handleLocationChange = (name, formatted_address, location) => {
+    const user = Object.assign({}, this.state.user, { name, formatted_address, location });
+    this.setState({ user });
   }
 
   render() {
@@ -37,6 +48,8 @@ class Register extends React.Component {
         user={this.state.user}
         handleChange={this.handleChange}
         handleSubmit={this.handleSubmit}
+        handleLocationChange={this.handleLocationChange}
+        {...this.state}
       />
     );
   }

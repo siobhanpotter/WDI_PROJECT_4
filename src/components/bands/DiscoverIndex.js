@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 
 
 
-class MainIndex extends React.Component {
+class DiscoverIndex extends React.Component {
   state = {
     users: [],
     bands: []
@@ -85,7 +85,6 @@ class MainIndex extends React.Component {
                       <h1>{ user.username }</h1>
                       <p>{ user.mainInstrument }</p>
                       <h5>{ user.style }</h5>
-                      <p>{ user.location }</p>
                       { <Link to={`/users/${user.id}`}   className="standard-button">
                         <i className="fa fa-pencil"   aria-hidden="true"></i>Read More
                       </Link>}
@@ -129,4 +128,4 @@ class MainIndex extends React.Component {
   }
 }
 
-export default MainIndex;
+export default DiscoverIndex;

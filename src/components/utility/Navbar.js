@@ -16,9 +16,9 @@ const Navbar = ({ history }) => {
     <nav className="nav">
       { <Link to="/" className="standard-button" ><strong>Music App</strong></Link>}
       {' '}
-      { <Link to="/" className="standard-button" >Home</Link>}
-      {' '}
-      { <Link to="/discover" className="standard-button" >Index</Link>}
+      {/* { <Link to="/" className="standard-button" >Home</Link>}
+      {' '} */}
+      { <Link to="/discover" className="standard-button" >Discover</Link>}
       {' '}
       { !Auth.isAuthenticated() && <Link to="/login" className="standard-button" >Login</Link>}
       {' '}

@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import Login from '../auth/Login';
 import Register from '../auth/Register';
-import MainIndex from '../bands/MainIndex';
+import DiscoverIndex from '../bands/DiscoverIndex';
 import BandsIndex from '../bands/BandsIndex';
 import BandsNew from '../bands/BandsNew';
 import BandsShow from '../bands/BandsShow';
@@ -21,7 +21,7 @@ const Routes = () => {
     <Switch>
       <Route path="/login" component={Login} />
       <Route path="/register" component={Register} />
-      <Route path="/discover" component={MainIndex} />
+      <Route path="/discover" component={DiscoverIndex} />
       <Route path="/bands/:id/requests/new" component={RequestsNew} />
       <Route path="/bands/new" component={BandsNew} />
       <Route path="/bands/:id" component={BandsShow} />

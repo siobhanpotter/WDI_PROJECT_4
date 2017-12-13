@@ -4,7 +4,7 @@ const Band = require('../models/band');
 function bandsIndex(req, res, next) {
   Band
     .find()
-    // .populate('members')
+    // .populate('createdBy members')
     // .populate('createdBy')///?
     .exec()
     .then(bands => res.json(bands))

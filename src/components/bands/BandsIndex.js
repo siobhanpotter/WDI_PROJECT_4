@@ -79,7 +79,6 @@ class BandsIndex extends React.Component {
                     </div>
                     <h5>{ band.style }</h5>
                     <h2>{ band.createdBy }</h2>
-                    <p>{ band.location }</p>
                     { <Link to={`/bands/${band.id}`} className="standard-button">
                       <i className="fa fa-pencil" aria-hidden="true"></i>Read More
                     </Link>}

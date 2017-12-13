@@ -74,8 +74,8 @@ class RequestsIndex extends React.Component {
                 <li><Link to={`/users/${request.sender._id}`}>{ request.sender.username }</Link></li>
                 <li>{ request.band.bandName }</li>
                 <li>{ request.message }</li>
-                <li onClick={() => this.respondToRequest(request, 'accept')} className="btn btn-success">Accept</li>
-                <li onClick={() => this.respondToRequest(request, 'reject')} className="btn btn-danger">Reject</li>
+                <li onClick={() => this.respondToRequest(request, 'accepted')} className="btn btn-success">Accept</li>
+                <li onClick={() => this.respondToRequest(request, 'rejected')} className="btn btn-danger">Reject</li>
               </ul>
             </li>
           )}

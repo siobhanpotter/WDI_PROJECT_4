@@ -7,45 +7,95 @@ import mapStyles from '../config/mapStyles';
 
 class GoogleMap extends React.Component {
 
-  componentDidMount() {
-    this.map = new google.maps.Map(this.mapCanvas, {
-      center: this.props.center || { lat: 51.51, lng: -0.09 },
-      zoom: 14,
-      clickableIcons: false,
-      disableDefaultUI: true,
-      styles: mapStyles
-    });
+ bounds = new google.maps.LatLngBounds();
 
-    this.marker = new google.maps.Marker({
-      map: this.map,
-      position: this.props.center || { lat: 51.51, lng: -0.09 },
-      animation: google.maps.Animation.DROP
-    });
-  }
+ componentDidMount() {
+   this.map = new google.maps.Map(this.mapCanvas, {
+     center: this.props.center || { lat: 51.515419, lng: -0.141099 },
+     zoom: 12,
+     clickableIcons: false,
+     // disableDefaultUI: true,
+     styles: mapStyles
+   });
 
-  componentWillUnmount() {
-    this.marker.setMap(null);
-    this.marker = null;
-    this.map = null;
-  }
+   this.userMarker = new google.maps.Marker({ map: this.map });
+ }
 
-  // $timeout(loopOverUsers, 100);
+ componentWillUpdate(nextProps) {
+   this.infoWindow = new google.maps.InfoWindow();
 
-  // function loopOverUsers() {
-  //   if (users.length > 0) {
-  //     this.state.users.forEach(user => {
-  //       createMarker(user);
-  //     });
-  //   } else {
-  //     createMarker(user);
-  //   }
-  // }
+   if(nextProps.userMarker && Object.keys(nextProps.userMarker).length !== 0) {
+     this.userMarker.setPosition(nextProps.userMarker);
+     this.map.setCenter(nextProps.userMarker);
+     this.map.setZoom(14);
 
-  render() {
-    return (
-      <div className="google-map" ref={element => this.mapCanvas = element}></div>
-    );
-  }
+     this.bounds.extend(nextProps.userMarker);
+     this.filterMarkers();
+   }
+
+   if(nextProps.users.length !== this.props.users.length) {
+     this.markers = nextProps.users.map(user => {
+       const marker = new google.maps.Marker({
+         map: this.map,
+         position: user.location,
+         animation: google.maps.Animation.DROP
+       });
+
+       this.bounds.extend(user.location);
+
+       marker.addListener('click', () => {
+         this.infoWindow.setContent(`
+           <a href=${`/users/${user.id}`} />
+           <h2>${user.username}</h2>
+           `);
+         this.infoWindow.open(this.map, marker);
+       });
+
+       return marker;
+     });
+   }
+
+   this.map.fitBounds(this.bounds);
+ }
+
+    filterMarkers = () => {
+      if(this.userCircle) this.userCircle.setMap(null);
+
+      this.userCircle = new google.maps.Circle({
+        strokeColor: '#FF0000',
+        strokeOpacity: 0.8,
+        strokeWeight: 2,
+        fillColor: '#FF0000',
+        fillOpacity: 0.35,
+        map: this.map,
+        center: this.userMarker.getPosition(),
+        radius: 14400
+      });
+
+      this.bounds = this.userCircle.getBounds();
+      this.map.fitBounds(this.bounds);
+
+      this.markers.forEach(marker => {
+        marker.setMap(this.map);
+
+        if(!this.bounds.contains(marker.getPosition())) {
+          marker.setMap(null);
+        }
+      });
+    }
+
+    componentWillUnmount() {
+      this.markers && this.markers.forEach(marker => marker.setMap(null));
+      this.markers = [];
+      this.map = null;
+    }
+
+
+    render() {
+      return (
+        <div className="google-map" ref={element => this.mapCanvas = element}></div>
+      );
+    }
 }
 
 export default GoogleMap;

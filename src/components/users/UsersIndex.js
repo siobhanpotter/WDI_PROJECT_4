@@ -4,6 +4,7 @@ import _ from 'lodash';
 // import styled from 'styled-components';
 // import Button from '../styled-components/Button.js'
 
+// import GoogleMap from '../utility/GoogleMap';
 import UsersSearchBar from './UsersSearchBar';
 import Promise  from 'bluebird';
 import { Link } from 'react-router-dom';
@@ -15,7 +16,7 @@ import '../../scss/style.scss';
 
 
 
-class MainIndex extends React.Component {
+class UsersIndex extends React.Component {
   state = {
     users: [],
     sortBy: 'username',
@@ -83,7 +84,6 @@ class MainIndex extends React.Component {
                   </div>
                   <h1>{ user.username }</h1>
                   <p>{ user.mainInstrument }</p>
-                  <p>{ user.location }</p>
                   <h5>{ user.style }</h5>
                   { <Link to={`/users/${user.id}`} className="standard-button">
                     <i className="fa fa-pencil" aria-hidden="true"></i>Read More
@@ -94,7 +94,7 @@ class MainIndex extends React.Component {
           </div>
         </section>
         <section>
-          <GoogleMap center={this.state.center} />
+          <GoogleMap users={this.state.users} />
         </section>
       </div>
 
@@ -102,4 +102,4 @@ class MainIndex extends React.Component {
   }
 }
 
-export default MainIndex;
+export default UsersIndex;
