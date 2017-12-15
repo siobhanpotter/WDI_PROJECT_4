@@ -2,7 +2,7 @@ import React    from 'react';
 import { Link } from 'react-router-dom';
 import Axios    from 'axios';
 
-// import Auth from '../../lib/Auth';
+import Auth from '../../lib/Auth';
 // import BackButton from '../utility/BackButton';
 
 class UsersShow extends React.Component {
@@ -47,13 +47,9 @@ class UsersShow extends React.Component {
             <i className="fa fa-trash" aria-hidden="true"></i>Delete
           </button>} */}
 
-          { <Link to={`/users/${this.state.user.id}/edit`} className="standard-button">
+          { Auth.isAuthenticated() && <Link to={`/users/${this.state.user.id}/edit`} className="standard-button">
             <i className="fa fa-pencil" aria-hidden="true"></i>Edit Profile
           </Link>}
-          { <Link to={'/bands/new'} className="standard-button">
-            <i className="fa fa-pencil" aria-hidden="true"></i>Create Band
-          </Link>}
-          <h2>Requests</h2>
         </div>
       </div>
     );

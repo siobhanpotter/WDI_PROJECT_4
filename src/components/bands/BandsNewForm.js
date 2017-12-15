@@ -1,15 +1,14 @@
 import React from 'react';
+import AutoComplete from '../utility/AutoComplete';
 
 import MultiSelect from '../utility/MultiSelect';
 
-const BandsNewForm = ({ handleSubmit, handleChange, band, handleSelectChange, removeSelected, value, members }) => {
-// const BandsNewForm = ({ handleSubmit, handleChange, band }) => {
+const BandsNewForm = ({ handleSubmit, handleChange, band, handleSelectChange, removeSelected, value, members, handleLocationChange }) => {
   return (
     <div>
       <h1>Create Band</h1>
       <div className="row">
         <div className="page-banner col-md-12">
-
         </div>
         <form onSubmit={handleSubmit} className="col-md-6">
           <div className="form-group">
@@ -23,7 +22,6 @@ const BandsNewForm = ({ handleSubmit, handleChange, band, handleSelectChange, re
               onChange={handleChange}
             />
           </div>
-
           <div className="form-group">
             <label htmlFor="image">Image</label>
             <input
@@ -35,7 +33,6 @@ const BandsNewForm = ({ handleSubmit, handleChange, band, handleSelectChange, re
               onChange={handleChange}
             />
           </div>
-
           <div className="form-group">
             <label htmlFor="about">About</label>
             <input
@@ -47,19 +44,6 @@ const BandsNewForm = ({ handleSubmit, handleChange, band, handleSelectChange, re
               onChange={handleChange}
             />
           </div>
-
-          <div className="form-group">
-            <label htmlFor="location">Location</label>
-            <input
-              type="text"
-              className="form-control"
-              id="location"
-              name="location"
-              value={band.location}
-              onChange={handleChange}
-            />
-          </div>
-
           <div className="form-group">
             <label htmlFor="style">Style</label>
             <select
@@ -74,30 +58,19 @@ const BandsNewForm = ({ handleSubmit, handleChange, band, handleSelectChange, re
               <option>Rock</option>
               <option>Pop</option>
               <option>Metal</option>
-              <option>Jazz</option>
+              <option>World</option>
+              <option>Afrobeat</option>
+              <option>Electronic</option>
+              <option>Classical</option>
+              <option>RnB</option>
             </select>
           </div>
-
-
           <MultiSelect
             handleSelectChange={handleSelectChange}
             removeSelected={removeSelected}
             options={members}
             value={value}
           />
-
-          {/* <div className="form-group">
-            <label htmlFor="members">Members</label>
-            <input
-              type="text"
-              className="form-control"
-              id="members"
-              name="members"
-              value={band.members}
-              onChange={handleChange}
-            />
-          </div> */}
-
           <div className="form-group">
             <label htmlFor="memberRequired">Member Required</label>
             <input
@@ -109,7 +82,10 @@ const BandsNewForm = ({ handleSubmit, handleChange, band, handleSelectChange, re
               onChange={handleChange}
             />
           </div>
-
+          <div className="form-group">
+            <label>Landmark or station near your home (please do not give your exact address for security reasons)</label>
+            <AutoComplete handleChange={handleLocationChange} />
+          </div>
           <div>
             <button className="save-button">Save</button>
           </div>

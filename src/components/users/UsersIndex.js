@@ -65,32 +65,34 @@ class UsersIndex extends React.Component {
       <div>
         <section>
 
-          <div>
+          {/* <div>
             <img src="https://static.pexels.com/photos/8263/pexels-photo.jpg" className="img-responsive"  />
-          </div>
+          </div> */}
           {/* <Button>hi</Button> */}
-          <h1>Musicians</h1>
+          <div className="header">
+            <h1 id="index-title">Musicians</h1>
+            <UsersSearchBar handleSort={this.handleSort} handleSearch={this.handleSearch} />
+          </div>
 
-          <UsersSearchBar handleSort={this.handleSort} handleSearch={this.handleSearch} />
+          <div className="main-container ">
+            <div className="row users-main-container">
+              {users.map(user => {
+                return(
+                  <div key={user.id} className="image-tile col-md-4 col-sm-6 col-xs-12 tile-padding-margin">
 
-
-          <div className="row">
-            {users.map(user => {
-              return(
-                <div key={user.id} className="image-tile col-md-4 col-sm-6 col-xs-12 tile-padding-margin">
-
-                  <div className="image-tile col-md-4">
-                    <img src={user.image} className="img-responsive"  />
+                    <div className="img-container-profile">
+                      <img src={user.image} className="img-user"  />
+                    </div>
+                    <h4>{ user.username }</h4>
+                    <p>{ user.mainInstrument }</p>
+                    <h5>{ user.style }</h5>
+                    { <Link to={`/users/${user.id}`} className="standard-button">
+                      <i className="fa fa-pencil" aria-hidden="true"></i>Read More
+                    </Link>}
                   </div>
-                  <h1>{ user.username }</h1>
-                  <p>{ user.mainInstrument }</p>
-                  <h5>{ user.style }</h5>
-                  { <Link to={`/users/${user.id}`} className="standard-button">
-                    <i className="fa fa-pencil" aria-hidden="true"></i>Read More
-                  </Link>}
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
         </section>
         <section>

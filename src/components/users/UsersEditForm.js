@@ -12,41 +12,6 @@ function UsersEditForm({ handleSubmit, handleChange, user }) {
         <div className="page-banner col-md-12">
         </div>
         <form onSubmit={handleSubmit} className="col-md-6">
-          {/* <div className="form-group">
-            <label htmlFor="username">Username</label>
-            <input
-              type="text"
-              className="form-control"
-              id="username"
-              name="username"
-              value={user.username}
-              onChange={handleChange}
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="email">Email</label>
-            <input
-              type="text"
-              className="form-control"
-              id="email"
-              name="email"
-              value={user.email}
-              onChange={handleChange}
-            />
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="password">Password</label>
-            <input
-              type="text"
-              className="form-control"
-              id="password"
-              name="password"
-              value={user.password}
-              onChange={handleChange}
-            />
-          </div> */}
 
           <div className="form-group">
             <label htmlFor="image">Image</label>
@@ -85,19 +50,6 @@ function UsersEditForm({ handleSubmit, handleChange, user }) {
           </div>
 
           <div className="form-group">
-            <label htmlFor="location">Location</label>
-            <input
-              type="text"
-              className="form-control"
-              id="location"
-              name="location"
-              value={user.location}
-              onChange={handleChange}
-            />
-          </div>
-
-
-          <div className="form-group">
             <label htmlFor="style">Style</label>
             <select
               className="form-control"
@@ -116,8 +68,8 @@ function UsersEditForm({ handleSubmit, handleChange, user }) {
             </select>
           </div>
 
-          
 
+          
 
           <div>
             <button className="save-button">Save</button>

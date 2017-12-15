@@ -4,14 +4,11 @@ const User = require('../models/user');
 function usersIndex(req, res, next) {
   User
     .find()
-    // .populate('createdBy')
     .exec()
     .then(users => res.json(users))
     .catch(next);
 }
 
-
-//
 // //profile page
 function usersShow(req, res, next) {
   User
@@ -23,12 +20,8 @@ function usersShow(req, res, next) {
     })
     .catch(next);
 }
-//
-// //updating your details, this is where you would add details to ?
+
 function usersUpdate(req, res, next) {
-
-  // if(req.file) req.body.image = req.file.filename;
-
   User
     .findById(req.params.id)
     .exec()

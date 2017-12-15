@@ -3,9 +3,10 @@ import { Row, Col, FormGroup, InputGroup, FormControl, Button } from 'react-boot
 
 const UsersSearchBar = ({ handleSort, handleSearch }) => {
   return(
-    <Row>
-      <Col md={6}>
-        <FormGroup>
+    <Row className="search-bar">
+      <Col md={3}></Col>
+      <Col md={3} >
+        <FormGroup className="filter">
           <FormControl componentClass="select" onChange={handleSort}>
             <option value="style|desc">Style (A - Z)</option>
             <option value="style|asc">Style (Z - A)</option>
@@ -16,7 +17,7 @@ const UsersSearchBar = ({ handleSort, handleSearch }) => {
           </FormControl>
         </FormGroup>
       </Col>
-      <Col md={6}>
+      <Col md={3}>
         <FormGroup>
           <FormControl type="text" placeholder="Search" onChange={handleSearch}/>
         </FormGroup>

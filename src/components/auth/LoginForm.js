@@ -1,13 +1,10 @@
 import React from 'react';
 
 const LoginForm = ({ handleChange, handleSubmit, user }) => {
-// const LoginForm = () => {
   return (
     <div>
       <h1>Login Form</h1>
       <form onSubmit={handleSubmit}>
-
-        {/* add class to div to style */}
         <div>
           <input
             type="text"

@@ -6,15 +6,11 @@ import UsersEditForm from './UsersEditForm';
 
 class UsersEdit extends React.Component {
   state = {
-    user: {//do all of these fields need to match the model??
-      // username: '',
-      // email: '',
-      // password: '',
+    user: {
       image: '',
       about: '',
       mainInstrument: '',
       // additionalInstruments: [],
-      location: '',
       style: ''
     }
   };

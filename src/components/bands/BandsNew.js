@@ -10,10 +10,10 @@ class BandsNew extends React.Component {
       bandName: '',
       image: '',
       about: '',
-      location: '',
       style: '',
       members: [],
-      memberRequired: ''
+      memberRequired: '',
+      formatted_address: ''
     },
     removeSelected: true,
     members: [],
@@ -63,12 +63,20 @@ class BandsNew extends React.Component {
     this.setState({ value });
   }
 
+
+  handleLocationChange = (name, formatted_address, location) => {
+    const band = Object.assign({}, this.state.band, { name, formatted_address, location });
+    this.setState({ band });
+  }
+
   render() {
     return (
       <BandsNewForm
         handleChange={this.handleChange}
         handleSubmit={this.handleSubmit}
         handleSelectChange={this.handleSelectChange}
+        handleSelectChange2={this.handleSelectChange2}
+        handleLocationChange={this.handleLocationChange}
         {...this.state}
       />
     );
@@ -76,15 +84,3 @@ class BandsNew extends React.Component {
 }
 
 export default BandsNew;
-
-
-// const bandSchema = mongoose.Schema({
-//   username: { type: String, required: true },//username
-//   image: { type: String, required: true },
-//   description: { type: String, required: true},
-//   members: { type: {} },//name:intrument required: true
-//   //search by the parameters below
-//   location: { type: String, required: true },
-//   style: { type: Array, required: true },
-//   type: { type: String }//band or musician
-// });

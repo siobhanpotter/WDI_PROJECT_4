@@ -3,15 +3,11 @@ import RegisterForm from './RegisterForm';
 import Axios        from 'axios';
 
 import Auth from '../../lib/Auth';
-// import AutoComplete from '../utility/AutoComplete';
-// import GoogleMap from '../maps/GoogleMap';
-
 
 class Register extends React.Component {
   state = {
     user: {
       username: '',
-      name: '',
       email: '',
       password: '',
       passwordConfirmation: '',

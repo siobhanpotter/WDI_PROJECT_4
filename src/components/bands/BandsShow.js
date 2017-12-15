@@ -2,9 +2,6 @@ import React    from 'react';
 import { Link } from 'react-router-dom';
 import Axios    from 'axios';
 
-// import Auth from '../../lib/Auth';
-// import BackButton from '../utility/BackButton';
-
 class BandsShow extends React.Component {
   state = {
     band: null
@@ -32,11 +29,11 @@ class BandsShow extends React.Component {
     if (!this.state.band) return null;
     return (
       <div className="row">
-        <div className="image-tile col-md-6">
+        <div className="image-tile col-md-6 col-lg-8">
           <img src={this.state.band.image} className="img-responsive" />
         </div>
         <div className="col-md-6">
-          <h2>{this.state.band.bandName}</h2>
+          <h3>{this.state.band.bandName}</h3>
           <p>{this.state.band.about}</p>
           <h5>Style: {this.state.band.style}</h5>
           <h5>Created By: {this.state.band.createdBy.username}</h5>
