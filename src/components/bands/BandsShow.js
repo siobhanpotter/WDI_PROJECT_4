@@ -28,19 +28,19 @@ class BandsShow extends React.Component {
   render() {
     if (!this.state.band) return null;
     return (
-      <div className="row">
-        <div className="image-tile col-md-6 col-lg-8">
-          <img src={this.state.band.image} className="img-responsive" />
+      <div className="row profile-container">
+        <div className="image-tile col-md-6">
+          <img src={this.state.band.image} className="img-responsive " />
         </div>
         <div className="col-md-6">
-          <h3>{this.state.band.bandName}</h3>
+          <h2>{this.state.band.bandName}</h2>
           <p>{this.state.band.about}</p>
           <h5>Style: {this.state.band.style}</h5>
           <h5>Created By: {this.state.band.createdBy.username}</h5>
 
-          <h3>members: {this.state.band.members && this.state.band.members.map(member => <div key={member._id}>
+          <h5>members: {this.state.band.members && this.state.band.members.map(member => <div key={member._id}>
             {member.username}
-          </div>)}</h3>
+          </div>)}</h5>
 
           {/* <h5>Members: {this.state.band.bandMembers}</h5> */}
           <h5>Member Required: {this.state.band.memberRequired}</h5>

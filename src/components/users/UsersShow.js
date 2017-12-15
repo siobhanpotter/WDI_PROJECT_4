@@ -28,10 +28,10 @@ class UsersShow extends React.Component {
 
   render() {
     return (
-      <div className="row">
-        <h1>Profile Page</h1>
+      <div className="row profile-container">
+        <h1>Profile</h1>
         <div className="image-tile col-md-6">
-          <img src={this.state.user.image} className="img-responsive" width="50%" />
+          <img src={this.state.user.image} className="img-responsive" width="100%" />
         </div>
         <div className="col-md-6">
           <h2>{this.state.user.username}</h2>

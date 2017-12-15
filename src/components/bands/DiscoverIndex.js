@@ -32,9 +32,9 @@ class DiscoverIndex extends React.Component {
               <h1 className="main-header">Music App</h1>
               <h4>Music App is a way to bring local musicians and bands together.</h4>
               <ul>
-                <li>Find other musicans to jam with</li>
                 <li>Start a band</li>
-                <li>Find new members for you band</li>
+                <li>Find new members</li>
+                <li>Search for local musicans to jam with</li>
                 <li>Apply to join a band</li>
               </ul>
             </div>
@@ -55,7 +55,7 @@ class DiscoverIndex extends React.Component {
 
           <div className="col-sm-6">
             <div className="row disc-img-container">
-              <img src="../assets/couple.png" className="img-band"  />
+              <img src="../assets/couple.png" className="img-responsive img-band"  />
             </div>
           </div>
         </div>
