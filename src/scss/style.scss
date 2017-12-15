@@ -13,7 +13,6 @@
   a {
     color: #FAFAFA;
     padding: 5px;
-
   }
 }
 
@@ -22,7 +21,8 @@ html, body {
   padding: 0;
   margin: 0;
   .main-container {
-    margin: 10px 30px 15px 30px;
+    margin: 10px 30px 10px 30px;
+    // margin: 0;
   }
 }
 
@@ -35,26 +35,47 @@ h2, h3 {
   font-weight: bold;
 }
 
+.main-header-wrapper {
+  padding: 50px;
+  background-color: #141414;
+  color: #FAFAFA;
+  // background-color: pruple;
+  .main-header {
+    font-size: 90px;
+    font-weight: bold;
+  }
+}
+
+
+.discover-container {
+  width: 100%;
+  margin: 0 auto;
+  .discover-left {
+    padding-left: 80px;
+  }
+  .disc-image-continer {
+    position:relative;
+    padding-top:100%;
+    overflow: hidden;
+  }
+}
 .discover-img {
   width: 50%;
+}
+
+.bands-div {
+  // background-color: #F4F4F4;
+  background-color: #DBDBDB;
+  // background-color: red;
+  padding: 8px 0px 25px 0px;
 }
 
 .google-map {
   height: 100vh;
 }
 
-
-.section-one-outer {
-  // background-color: white;
-  // padding: 50px 0px;
-}
-
-.section-two-outer {
-  // background-color: #F4F4F4;
-  background-color: #DBDBDB;
-  // background-color: grey;
-  // padding: 50px 0px;
-  width: 50%;
+.musicians-div {
+  padding: 8px 0px 25px 0px;
 }
 
 .tile-padding-margin {
@@ -65,16 +86,12 @@ h2, h3 {
   // background-color: #9B9B9B;
 }
 
-// .image-top {
-//   margin: 10px 0px;
-// }
 
 .img-band {
  position: absolute;
   top: 0;
   left: 0;
   width:100%;
-  // height: 100%;
 }
 
 .img-user {

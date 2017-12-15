@@ -25,54 +25,42 @@ class DiscoverIndex extends React.Component {
   render() {
 
     return (
-
-
-
-
       <div className="row">
-      å  {/* <div>
-            <img src="https://static.pexels.com/photos/8263/pexels-photo.jpg" className="img-responsive"  />
-          </div> */}
-
-
-
-        <div>
-          <div className="col-sm-12">
-            <div className="row">
-              <div className="section-one-outer col-lg-6">
-                <section className="container">
-                  <h1>Musicians</h1>
-                  { <Link to={'/users'} className="standard-button">
-                    <i className="fa fa-pencil" aria-hidden="true"></i>View All
-                  </Link>}
-                </section>
-              </div>
+        <div className="discover-container">
+          <div className="col-sm-6 col-lg-6 ">
+            <div className="row discover-left main-header-wrapper">
+              <h1 className="main-header">Music App</h1>
+              <h4>Music App is a way to bring local musicians and bands together.</h4>
+              <ul>
+                <li>Find other musicans to jam with</li>
+                <li>Start a band</li>
+                <li>Find new members for you band</li>
+                <li>Apply to join a band</li>
+              </ul>
+            </div>
+            <div className="row discover-left musicians-div">
+              <h1>Musicians</h1>
+              { <Link to={'/users'} className="standard-button">
+                <i className="fa fa-pencil" aria-hidden="true"></i>View All
+              </Link>}
             </div>
 
-            <div className="row">
-              <div className="section-two-outer col-lg-6">
-                <section className="container">
-                  <h1>Bands</h1>
-                  { <Link to={'/bands'} className="standard-button">
-                    <i className="fa fa-pencil" aria-hidden="true"></i>View   All
-                  </Link>}
-                </section>
-              </div></div>
-          </div>
-
-          <div className="container" role="main">
-            <div className="row">
-              <div className="col-sm-4">
-                <div className="row">
-                </div>
-              </div>
+            <div className="row discover-left bands-div">
+              <h1>Bands</h1>
+              { <Link to={'/bands'} className="standard-button">
+                <i className="fa fa-pencil" aria-hidden="true"></i>View   All
+              </Link>}
             </div>
           </div>
 
-
-
+          <div className="col-sm-6">
+            <div className="row disc-img-container">
+              <img src="../assets/couple.png" className="img-band"  />
+            </div>
+          </div>
         </div>
       </div>
+
     );
   }
 }
