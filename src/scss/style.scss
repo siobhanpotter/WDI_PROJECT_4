@@ -1,6 +1,22 @@
-.music-box {
-  background-color: black;
+
+.box-wrapper {
+  // background-color: black;
+  background: linear-gradient(to bottom right, #ff4e50, #f9d423);
+  // height: 100%;
+  .music-box {
+    // background-color: black;
+    background: linear-gradient(to bottom right, #ff4e50, #f9d423);
+    border: 10px solid white;
+    border-radius: 30px;
+    padding: 25%;
+    margin: 5% 10%;
+    // margin: 70px 150px 90px 150px;
+    text-align: center;
+    font-size: 50px;
+    color: white;
+  }
 }
+
 
 .box-1 {
   background-color: red;
@@ -35,10 +51,10 @@ html, body {
   margin: 0;
   background-color: #F5F5F5;
   // background-color: orange;
-  .main-container {
-    margin: 10px 30px 10px 30px;
-    // margin: 0;
-  }
+  // .main-container {
+  //   margin: 10px 30px 10px 30px;
+  //   // margin: 0;
+  // }
 }
 
 h1 {
