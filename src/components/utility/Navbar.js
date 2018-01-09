@@ -15,7 +15,7 @@ const Navbar = ({ history }) => {
   return(
     <nav className="nav">
       <div row={12}>
-        { <Link to="/" className="standard-button nav-logo" ><strong>Music App</strong></Link>}
+        { <Link to="/" className="standard-button nav-logo" ><strong>MUSIC BOX</strong></Link>}
         {' '}
         { !!Auth.isAuthenticated() && <Link to="/requests" className="standard-button" >Requests</Link>}
         {' '}

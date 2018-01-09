@@ -78,17 +78,21 @@ class UsersIndex extends React.Component {
             <div className="row users-main-container">
               {users.map(user => {
                 return(
-                  <div key={user.id} className="image-tile col-md-4 col-sm-6 col-xs-12 tile-padding-margin">
+                  <div key={user.id} className="image-tile col-md-4 col-sm-6 col-xs-12 tile-padding-margin ">
+                    <div className="outer-wrapper">
+                      <div className="col-lg-6 col-md-6 col-sm-6 img-container-profile">
+                        <img src={user.image} className="img-user"  />
+                      </div>
 
-                    <div className="img-container-profile">
-                      <img src={user.image} className="img-user"  />
+                      <div className="col-lg-6 col-md-6 col-sm-6 inner-wrapper">
+                        <h4>{ user.username }</h4>
+                        <p>{ user.mainInstrument }</p>
+                        <h5>{ user.style }</h5>
+                        { <Link to={`/users/${user.id}`} className="standard-button">
+                          <i className="fa fa-pencil" aria-hidden="true"></i>Read More
+                        </Link>}
+                      </div>
                     </div>
-                    <h4>{ user.username }</h4>
-                    <p>{ user.mainInstrument }</p>
-                    <h5>{ user.style }</h5>
-                    { <Link to={`/users/${user.id}`} className="standard-button">
-                      <i className="fa fa-pencil" aria-hidden="true"></i>Read More
-                    </Link>}
                   </div>
                 );
               })}

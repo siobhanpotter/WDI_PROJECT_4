@@ -12,6 +12,7 @@ import UsersShow from '../users/UsersShow';
 import UsersEdit from '../users/UsersEdit';
 import RequestsIndex from '../requests/RequestsIndex';
 import RequestsNew from '../requests/RequestsNew';
+import Home from '../home/Home';
 
 
 // import ProtectedRoute from './ProtectedRoute';
@@ -30,6 +31,7 @@ const Routes = () => {
       <Route path="/users/:id" component={UsersShow} />
       <Route path="/users" component={UsersIndex} />
       <Route path="/requests" component={RequestsIndex} />
+      <Route path="/" component={Home} />
     </Switch>
   );
 };

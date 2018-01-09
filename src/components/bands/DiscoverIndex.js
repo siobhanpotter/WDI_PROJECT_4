@@ -29,8 +29,8 @@ class DiscoverIndex extends React.Component {
         <div className="discover-container">
           <div className="col-sm-6 col-lg-6 ">
             <div className="row discover-left main-header-wrapper">
-              <h1 className="main-header">Music App</h1>
-              <h4>Music App is a way to bring local musicians and bands together.</h4>
+              <h1 className="main-header">Music Box</h1>
+              <h4>Music Box is a way to bring local musicians and bands together.</h4>
               <ul>
                 <li>Start a band</li>
                 <li>Find new members</li>
@@ -38,29 +38,34 @@ class DiscoverIndex extends React.Component {
                 <li>Apply to join a band</li>
               </ul>
             </div>
-            <div className="row discover-left musicians-div">
-              <h1>Musicians</h1>
-              { <Link to={'/users'} className="standard-button">
-                <i className="fa fa-pencil" aria-hidden="true"></i>View All
-              </Link>}
+            <div>
+              <div className="row discover-left musicians-div">
+                <h1>Musicians</h1>
+                { <Link to={'/users'} className="standard-button">
+                  <i className="fa fa-pencil" aria-hidden="true"></i>View All
+                </Link>}
             </div>
 
             <div className="row discover-left bands-div">
               <h1>Bands</h1>
               { <Link to={'/bands'} className="standard-button">
-                <i className="fa fa-pencil" aria-hidden="true"></i>View   All
-              </Link>}
-            </div>
+              <i className="fa fa-pencil" aria-hidden="true"></i>View   All
+            </Link>}
+          </div>
+        </div>
           </div>
 
-          <div className="col-sm-6">
-            <div className="row disc-img-container">
-              <img src="../assets/couple.png" className="img-responsive img-band"  />
+          {/* <div className="img-container">
+            <img src={band.image} className="img-band" />
+          </div> */}
+
+          <div className="col-sm-6 col-lg-6">
+            <div className="disc-img-container">
+              <img src="../assets/couple.png" className="img-responsive img-band"/>
             </div>
           </div>
         </div>
       </div>
-
     );
   }
 }
