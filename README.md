@@ -16,7 +16,7 @@
 
 ![](./screenshots/BandShowPage.png)
 
-* Request to join - The creator of the band recieves your request and can accept or reject the offer.
+* Request to join - The creator of the band receives your request and can accept or reject the offer.
 
 ![](./screenshots/RequestForm.png)
 
@@ -38,7 +38,7 @@ For my final project I built a MERN stack app for users to find other musicians 
 * HTML5
 * CSS3
 * SASS
-* Strava API
+* Google Places API
 * Google Maps API
 * Bootstrap
 * webpack
