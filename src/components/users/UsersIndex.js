@@ -78,7 +78,7 @@ class UsersIndex extends React.Component {
             <div className="row users-main-container">
               {users.map(user => {
                 return(
-                  <div key={user.id} className="image-tile col-md-4 col-sm-6 col-xs-12 tile-padding-margin ">
+                  <div key={user.id} className="image-tile col-md-2 col-sm-6 col-xs-12 tile-padding-margin ">
                     <div className="outer-wrapper">
                       <div className="col-lg-6 col-md-6 col-sm-6 img-container-profile">
                         <img src={user.image} className="img-user"  />
