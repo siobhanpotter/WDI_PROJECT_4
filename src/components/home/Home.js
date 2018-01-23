@@ -1,4 +1,5 @@
 import React    from 'react';
+import { Link } from 'react-router-dom';
 
 class Home extends React.Component {
   render() {
@@ -8,7 +9,7 @@ class Home extends React.Component {
         <div className="container">
           <div className="col">
             <div >
-              <h1 className="music-box">MUSIC BOX</h1>
+              <Link to="/discover" ><h1 className="music-box">MUSIC BOX</h1></Link>
             </div>
           </div>
         </div>
