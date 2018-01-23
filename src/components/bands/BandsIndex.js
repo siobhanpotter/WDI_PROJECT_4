@@ -46,7 +46,7 @@ class BandsIndex extends React.Component {
 
     return (
       <div>
-        <section>
+        <section >
 
           {/* <div>
             <img src="https://static.pexels.com/photos/8263/pexels-photo.jpg" className="img-responsive"  />

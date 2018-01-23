@@ -1,12 +1,8 @@
 
 .box-wrapper {
-  // background-color: black;
-  // background: linear-gradient(to bottom right, #ff512f, #dd2476);
   background: linear-gradient(to bottom right, #ff4e50, #f9d423);
-  // height: 100%;
+  height: 100%;
   .music-box {
-    // background-color: black;
-    // background: linear-gradient(to bottom right, #ff512f, #dd2476);
     background: linear-gradient(to bottom right, #ff4e50, #f9d423);
     border: 10px solid white;
     border-radius: 30px;
@@ -198,4 +194,39 @@ h2, h3 {
 .profile-container {
   margin: 60px;
   padding: 0px 60px;
+}
+
+//Forms
+
+// .login-background {
+//   width: 100%;
+//   height: calc(100vh - 66px);
+//   background: url('../assets/guitars.png') no-repeat center center;
+//   -webkit-background-size: cover;
+//   -moz-background-size: cover;
+//   -o-background-size: cover;
+//   background-size: cover;
+// }
+
+.form-container {
+  // width: 100%;
+  // height: calc(100vh - 66px);
+}
+
+.registraion-form {
+  padding: 15px;
+}
+
+.form-css {
+  padding: 50px;
+  .form-control {
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid grey;
+    padding: 20px;
+    font-size: 20px;
+  }
+  h1 {
+    font-weight: bold;
+  }
 }
